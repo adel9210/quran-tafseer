@@ -1,0 +1,11 @@
+.quran {
+  height: 690px;
+  width: 950px;
+  margin: 0 auto;
+
+  &__view {
+    background-color: #f4f4f4;
+    display: flex;
+    position: relative;
+  }
+}

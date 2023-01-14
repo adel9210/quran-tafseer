@@ -1,0 +1,29 @@
+.tafseer-text {
+  margin: 4px auto;
+  border: 1px solid #eee;
+  padding: 4px;
+  direction: rtl;
+  display: flex;
+  align-items: flex-start;
+  cursor: pointer;
+
+  &__aya {
+    &-number {
+      min-width: max-content;
+      margin-inline-end: 10px;
+      color: #808040;
+      font-weight: 400;
+    }
+
+    &-text {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.7;
+      color: #00478e;
+    }
+  }
+
+  &:hover, &.active {
+    background-color: #efefef
+  }
+}
