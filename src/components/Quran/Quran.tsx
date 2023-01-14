@@ -10,7 +10,7 @@ export const Quran = () => {
         <Header/>
         <div className="quran__view">
             <QuranPage/>
-            <QuranMarker />
+            <QuranMarker/>
             <QuranTafseer/>
         </div>
     </div>

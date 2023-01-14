@@ -23,7 +23,11 @@
     }
   }
 
-  &:hover, &.active {
-    background-color: #efefef
+  &.hover, &:hover {
+    background-color: rgb(217 213 213 / 43%);
+  }
+
+  &.active {
+    background-color: #dfefff;
   }
 }

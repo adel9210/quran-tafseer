@@ -1,15 +1,14 @@
 import './QuranTafseer.scss'
 import {TafseerText} from "./TafseerText/TafseerText";
-export const QuranTafseer = ()=>{
+import {QuranPageTafseer} from "../../../quranData";
+
+export const QuranTafseer = () => {
     return <div className='quran-tafseer'>
-        <TafseerText />
-        <TafseerText />
-        <TafseerText />
-        <TafseerText />
-        <TafseerText />
-        <TafseerText />
-        <TafseerText />
-        <TafseerText />
-        <TafseerText />
+
+        {
+            Object.keys(QuranPageTafseer).map((key) => {
+                return <TafseerText text={QuranPageTafseer[key]} ayaNumber={key}/>
+            })
+        }
     </div>
 }

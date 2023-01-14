@@ -4,6 +4,7 @@
   padding: 0 10px;
   overflow-x: auto;
   height: 670px;
+  scroll-behavior: smooth;
 
   &::-webkit-scrollbar {
     width: 10px;

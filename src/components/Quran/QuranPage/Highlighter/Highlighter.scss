@@ -1,0 +1,15 @@
+.highlighter {
+  display: block;
+  cursor: pointer;
+  position: absolute;
+  height: 37px;
+
+  &.hover {
+    background-color: rgb(217 213 213 / 43%);
+  }
+
+  &.active {
+    background-color: #006a9d;
+    opacity: .1;
+  }
+}
