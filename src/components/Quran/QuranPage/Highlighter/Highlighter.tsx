@@ -17,11 +17,10 @@ export const Highlighter = (props: Props) => {
     const {highlighterActiveId, highlighterHoverId} = useSelector((state: RootState) => state.quran)
     const dispatch = useDispatch()
 
-
     const style = {
-        width: width + 'px',
-        top: top + 'px',
-        left: left + 'px'
+        width: width,
+        top: top,
+        left: left
     }
 
     const onMouseOver = () => {
