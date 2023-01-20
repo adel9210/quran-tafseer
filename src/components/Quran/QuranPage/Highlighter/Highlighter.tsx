@@ -7,13 +7,12 @@ interface Props {
     top: number,
     left: number,
     width: number,
-    ayaNumber: string,
-    highlighterIndex: number,
-    isSingleHighlighter: boolean
+    ayaNumber: number,
+    highlighterId: string,
 }
 
 export const Highlighter = (props: Props) => {
-    const {top, width, left, ayaNumber, highlighterIndex, isSingleHighlighter} = props
+    const {top, width, left, ayaNumber, highlighterId} = props
     const {highlighterActiveId, highlighterHoverId} = useSelector((state: RootState) => state.quran)
     const dispatch = useDispatch()
 
@@ -25,7 +24,7 @@ export const Highlighter = (props: Props) => {
 
     const onMouseOver = () => {
         dispatch(changeHighlighterHoverId(getHighlighterId()))
-        const element = document.getElementById(ayaNumber)
+        const element = document.getElementById('tafseer_' + highlighterId)
         scrollToElement(element)
     }
 
@@ -35,26 +34,21 @@ export const Highlighter = (props: Props) => {
 
     const onClick = () => {
         dispatch(changeHighlighterActiveId(getHighlighterId()))
-        const element = document.getElementById(ayaNumber)
+        const element = document.getElementById(highlighterId)
         scrollToElement(element)
     }
 
     const getHighlighterId = () => {
-        if (isSingleHighlighter) {
-            return `${ayaNumber}_${highlighterIndex}`
-        }
-
-        return `${ayaNumber}`
+        return `${highlighterId}`
     }
 
     const scrollToElement = (elementRef: any) => {
-        let element = elementRef
-        element.scrollIntoView();
+        elementRef.scrollIntoView();
     }
 
 
     return <a onClick={onClick} onMouseLeave={onMouseLeave} onMouseOver={onMouseOver} style={style}
-              id={`${ayaNumber}_${highlighterIndex}`}
+              id={`${highlighterId}`}
               className={
                   `highlighter ${highlighterActiveId === getHighlighterId() ? 'active' : ''} ${highlighterHoverId === getHighlighterId() ? 'hover' : ''}`
               }/>
