@@ -7,7 +7,6 @@ import './Quran.scss';
 
 export const Quran = () => {
     return <div className='quran'>
-        <Header/>
         <div className="quran__view">
             <QuranPage/>
             <QuranMarker/>
