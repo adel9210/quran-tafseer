@@ -1,4 +1,9 @@
 .quran-page {
   padding: 5px 10px;
   position: relative;
+  flex: 1;
+
+  &__img {
+    width: 100%;
+  }
 }

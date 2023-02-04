@@ -1,0 +1,35 @@
+.modal {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+
+  &-container {
+    width: 60%;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 6px;
+    transform: translateY(100px);
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+
+  &__header {
+    border-bottom: 1px solid #EEEEEE;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__heading {
+      font-size: 18px;
+      font-weight: 500;
+      color: #6D7979;
+    }
+  }
+}

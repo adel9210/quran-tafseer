@@ -1,15 +1,26 @@
-import {createSlice} from '@reduxjs/toolkit'
+import {createSlice, PayloadAction} from '@reduxjs/toolkit'
 
 export interface QuranSliceType {
-    currentPage: number,
     highlighterHoverId: string
     highlighterActiveId: string,
+    currentPage?: number,
+    currentSura?: string,
+    currentAya?: string,
+    modal: {
+        isSuraModalOpen: boolean
+        isAyaModalOpen: boolean
+        isPageModalOpen: boolean,
+    }
 }
 
 const initialState: QuranSliceType = {
-    currentPage: 3,
     highlighterHoverId: '',
-    highlighterActiveId: ''
+    highlighterActiveId: '',
+    modal: {
+        isSuraModalOpen: false,
+        isAyaModalOpen: false,
+        isPageModalOpen: false,
+    }
 }
 
 export const quranSlice = createSlice({
@@ -22,11 +33,16 @@ export const quranSlice = createSlice({
         changeHighlighterActiveId: (state, {payload}) => {
             state.highlighterActiveId = payload
         },
+        setActiveModal: (state, action: PayloadAction<Record<string, boolean>>) => {
+            // const keyName: Partial<Pick<QuranSliceType, 'modal'>>
+            state.modal = {...state.modal, ...action.payload}
+            console.log(state.modal)
+        }
 
     },
 })
 
 // Action creators are generated for each case reducer function
-export const {changeHighlighterHoverId, changeHighlighterActiveId} = quranSlice.actions
+export const {changeHighlighterHoverId, changeHighlighterActiveId, setActiveModal} = quranSlice.actions
 
 export default quranSlice.reducer
