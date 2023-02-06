@@ -7,7 +7,7 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 export const Button = (props: Props) => {
     const {onClick, children} = props
-    return <button className='button' onClick={onClick}>
+    return <button {...props} className={`button ${props.className}`} onClick={onClick} >
         {children}
     </button>
 }

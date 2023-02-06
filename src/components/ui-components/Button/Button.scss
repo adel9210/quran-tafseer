@@ -12,7 +12,7 @@
   cursor: pointer;
   min-width: max-content;
 
-  .active, &:hover {
+  &.active, &:hover {
     background-color: #00A79D;
     color: #fff;
   }
