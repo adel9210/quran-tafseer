@@ -8,6 +8,8 @@ import {useDispatch, useSelector} from "react-redux";
 import {getActiveModals} from "./redux/selectors";
 import {setActiveModal, setValue} from "./redux/quran.slice";
 import {AyaModal} from "./components/ui-components/AyaModal/AyaModal";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {Container} from "react-bootstrap";
 
 function App() {
     const {isSuraModalOpen, isAyaModalOpen, isPageModalOpen} = useSelector(getActiveModals)
@@ -17,7 +19,7 @@ function App() {
         dispatch(setActiveModal({[activateModalKey]: false}))
     }, [])
 
-    const onSelectValue = ({value, key}: { key: string, value: string }, modalId:string) => {
+    const onSelectValue = ({value, key}: { key: string, value: string }, modalId: string) => {
         dispatch(setValue({value, key}))
         resetModal(modalId)
     }
@@ -33,8 +35,10 @@ function App() {
                 <AyaModal onSelect={(data) => onSelectValue(data, 'isAyaModalOpen')}/>
             </Modal>
             }
-            <Header/>
-            <Quran/>
+            <Container >
+                <Header/>
+                <Quran/>
+            </Container>
         </div>
     );
 }

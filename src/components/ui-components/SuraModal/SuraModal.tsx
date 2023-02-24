@@ -15,7 +15,7 @@ export const SuraModal = (props: Props) => {
         {
             SuraList.map((sura, index) => {
                 const suraName = sura[4]
-                return <div>
+                return <div key={suraName}>
                     <Button className={index === (filter && Number(filter?.currentSura)) ? 'active' : ''}
                             key={suraName}
                             style={{width: '100%'}}

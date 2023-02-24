@@ -2,7 +2,7 @@ body {
   font-family: 'Cairo', serif;
   padding: 0;
   margin: 0;
-  background-color: #E5E5E5;
+  background: linear-gradient(180deg, #DFF4F2 0%, #F5F5F5 49.97%);
   direction: rtl;
   text-align: right;
   box-sizing: border-box;
@@ -11,4 +11,11 @@ body {
 h1, h2, h3, h4, h5, h6, ul {
   padding: 0;
   margin: 0;
+}
+
+
+@media (min-width: 1500px) {
+  .container {
+    max-width: 1600px!important;
+  }
 }

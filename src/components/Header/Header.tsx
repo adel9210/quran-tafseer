@@ -9,6 +9,7 @@ import {setActiveModal} from "../../redux/quran.slice";
 import {getTafseerState} from "../../redux/selectors";
 import {useEffect, useState} from "react";
 import {getSuraInfo} from "../../services/helperFunctions";
+import {Col, Container, Row} from "react-bootstrap";
 
 const options = [
     {value: 'option 1', label: 'الخيار رقم 5'},
@@ -33,58 +34,68 @@ export const Header = () => {
     }, [filter])
 
     return <div className='header'>
-        <div className='header__pair'>
-            <div className='header__pair__item'>
-                <div className='header__pair__item__control'>
-                    <label className='header__pair__item__control__label'>البحث</label>
-                    <Select options={options} placeholder='إختر'/>
-                </div>
-                <div className='header__pair__item__control'>
-                    <label className='header__pair__item__control__label'>التفسير</label>
-                    <Select placeholder='إختر'/>
-                </div>
-            </div>
-            <div className='header__pair__item'>
-                <div className='header__pair__item__control'>
-                    <label className='header__pair__item__control__label'>السورة</label>
-                    <SelectModal value={selectedSura?.suraName} placeholder='إختر' onClick={() => onModalSelectClick('isSuraModalOpen')}/>
-                </div>
-                <div className='header__pair__item__control'>
-                    <label className='header__pair__item__control__label'>الأية</label>
-                    <SelectModal placeholder='إختر' value={filter?.currentAya} onClick={() => onModalSelectClick('isAyaModalOpen')}/>
-                </div>
-                <div className='header__pair__item__control'>
-                    <label className='header__pair__item__control__label'>الصفحة</label>
-                    <Select options={options} placeholder='إختر'/>
-                </div>
-                <div className='header__pair__item__control'>
-                    <label className='header__pair__item__control__label'>الجزء</label>
-                    <Select options={options} placeholder='إختر'/>
-                </div>
-
-            </div>
-        </div>
-        <div className='header__pair'>
-            <div className='header__pair__item'>
-                <div className='header__pair__item__control'>
-                    <label className='header__pair__item__control__label'>القارئ</label>
-                    <Select options={options} placeholder='إختر'/>
-                </div>
-                <div className='header__pair__item__control'>
-                    <label className='header__pair__item__control__label'>إعدادات التكرار</label>
-                    <Select options={options} placeholder='إختر'/>
-                </div>
-            </div>
-            <div className='header__pair__item'>
-                <AudioPlayer
-                    style={{direction: 'ltr'}}
-                    autoPlay
-                    src="https://quran.ksu.edu.sa/ayat/mp3/Husary_64kbps/002007.mp3"
-                    onPlay={e => console.log("onPlay")}
-                    // other props here
-                />
-            </div>
-        </div>
+        <Container>
+            <Row style={{alignItems: 'start'}}>
+               <Col md={2}>
+                   <img src={require('../../assets/images/logo.png')} alt='Logo' />
+               </Col>
+                <Col md={5}>
+                    <div className='header__pair'>
+                        <div className='header__pair__item'>
+                            <div className='header__pair__item__control'>
+                                <label className='header__pair__item__control__label'>البحث</label>
+                                <Select options={options} placeholder='إختر'/>
+                            </div>
+                            <div className='header__pair__item__control'>
+                                <label className='header__pair__item__control__label'>التفسير</label>
+                                <Select placeholder='إختر'/>
+                            </div>
+                        </div>
+                        <div className='header__pair__item'>
+                            <div className='header__pair__item__control'>
+                                <label className='header__pair__item__control__label'>السورة</label>
+                                <SelectModal value={selectedSura?.suraName} placeholder='إختر' onClick={() => onModalSelectClick('isSuraModalOpen')}/>
+                            </div>
+                            <div className='header__pair__item__control'>
+                                <label className='header__pair__item__control__label'>الأية</label>
+                                <SelectModal placeholder='إختر' value={filter?.currentAya} onClick={() => onModalSelectClick('isAyaModalOpen')}/>
+                            </div>
+                            <div className='header__pair__item__control'>
+                                <label className='header__pair__item__control__label'>الصفحة</label>
+                                <Select options={options} placeholder='إختر'/>
+                            </div>
+                            <div className='header__pair__item__control'>
+                                <label className='header__pair__item__control__label'>الجزء</label>
+                                <Select options={options} placeholder='إختر'/>
+                            </div>
+                        </div>
+                    </div>
+                </Col>
+                <Col md={5}>
+                    <div className='header__pair'>
+                        <div className='header__pair__item'>
+                            <div className='header__pair__item__control'>
+                                <label className='header__pair__item__control__label'>القارئ</label>
+                                <Select options={options} placeholder='إختر'/>
+                            </div>
+                            <div className='header__pair__item__control'>
+                                <label className='header__pair__item__control__label'>إعدادات التكرار</label>
+                                <Select options={options} placeholder='إختر'/>
+                            </div>
+                        </div>
+                        <div className='header__pair__item header__pair__item__control'>
+                            <AudioPlayer
+                                style={{direction: 'ltr'}}
+                                autoPlay
+                                src="https://quran.ksu.edu.sa/ayat/mp3/Husary_64kbps/002007.mp3"
+                                onPlay={e => console.log("onPlay")}
+                                // other props here
+                            />
+                        </div>
+                    </div>
+                </Col>
+            </Row>
+        </Container>
     </div>
 }
 

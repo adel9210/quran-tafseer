@@ -4,7 +4,6 @@ import {QuranDataPageTafseerDetails} from "../../../quranData";
 
 export const QuranTafseer = () => {
     return <div className='quran-tafseer'>
-
         {
             QuranDataPageTafseerDetails.map(({text, highlighterId}, index) => {
                 return <TafseerText highlighterId={highlighterId} key={index} text={text} ayaNumber={highlighterId}/>

@@ -1,4 +1,4 @@
-.modal {
+.co-modal {
   background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
   top: 0;
@@ -22,7 +22,7 @@
     border-bottom: 1px solid #EEEEEE;
     padding-bottom: 20px;
     margin-bottom: 30px;
-    display: flex;
+    display: flex!important;
     align-items: center;
     justify-content: space-between;
 
