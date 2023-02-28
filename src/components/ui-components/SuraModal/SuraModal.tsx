@@ -1,30 +1,43 @@
 import {Button} from "../Button/Button";
-import {SuraList} from "../../../quranData";
 import './SuraModal.scss'
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {getTafseerState} from "../../../redux/selectors";
+import {useEffect, useState} from "react";
+import {getSuraList} from "../../../services/client.service";
+import {filterTypes, Sura} from "../../../types";
+import {setActiveModal, setFilter, setSuraInfo} from "../../../redux/quran.slice";
 
-interface Props {
-    onSelect: ({value, key}: { key: string, value: string }) => void
-}
 
-export const SuraModal = (props: Props) => {
+export const SuraModal = () => {
     const {filter} = useSelector(getTafseerState)
+    const [suraList, setSuraList] = useState<Sura[]>()
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        (async () => {
+            const response = await getSuraList()
+            setSuraList(response.data)
+        })()
+    }, [])
+
+    const onSelect = (data: { key: filterTypes, value: string }, sura: Sura) => {
+        dispatch(setSuraInfo(sura))
+        dispatch(setFilter(data))
+        dispatch(setActiveModal({['isSuraModalOpen']: false}))
+    }
 
     return <div className='Sura-list'>
         {
-            SuraList.map((sura, index) => {
-                const suraName = sura[4]
-                return <div key={suraName}>
-                    <Button className={index === (filter && Number(filter?.currentSura)) ? 'active' : ''}
-                            key={suraName}
+            suraList?.map((sura) => {
+                return <div key={sura.index}>
+                    <Button className={sura.index === (filter && Number(filter?.currentSura)) ? 'active' : ''}
+                            key={sura.index}
                             style={{width: '100%'}}
-                            onClick={() => props.onSelect({key: 'currentSura', value: index.toString()})}>
-                        <span style={{display: "block"}}>{index + 1}</span>
-                        <span>{suraName}</span>
+                            onClick={() => onSelect({key: 'currentSura', value: sura.index.toString()}, sura)}>
+                        <span style={{display: "block"}}>{sura.index}</span>
+                        <span>{sura.arabicName}</span>
                     </Button>
                 </div>
-
             })
         }
     </div>

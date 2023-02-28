@@ -1,32 +1,43 @@
 import {Button} from "../Button/Button";
 import './AyaModal.scss'
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {getTafseerState} from "../../../redux/selectors";
-import {SuraList} from "../../../quranData";
+import {setActiveModal, setFilter} from "../../../redux/quran.slice";
+import {useEffect, useState} from "react";
+import {Sura} from "../../../types";
+import {getSuraDetails} from "../../../services/client.service";
 
-interface Props {
-    onSelect: ({value, key}: { key: string, value: string }) => void
-}
 
-export const AyaModal = (props: Props) => {
+export const AyaModal = () => {
     const {filter} = useSelector(getTafseerState)
+    const dispatch = useDispatch()
+    const [sura, setSura] = useState<Sura>()
 
-    const arrayRange = (start: number, stop: number, step: number) =>
-        Array.from(
-            {length: (stop - start) / step + 1},
-            (value, index) => start + index * step
-        );
+
+    useEffect(() => {
+        (async () => {
+            const response = await getSuraDetails(Number(filter?.currentSura))
+            setSura(response)
+        })()
+    }, [])
+
+
+    const onSelect = (data: any) => {
+        dispatch(setFilter(data))
+        dispatch(setActiveModal({['isAyaModalOpen']: false}))
+    }
+
 
     return <div className='list'>
         {!filter?.currentSura && <p>قم بإختيار السورة اولا</p>}
 
         {
-            filter?.currentSura && arrayRange(0, SuraList[+filter?.currentSura][1], 1).map((sura, index) => {
-                const AyaNumber = index
+            Array(sura?.ayaCount).fill('1').map((sura, index) => {
+                const AyaNumber = index + 1
                 return <Button key={AyaNumber}
-                               className={index === (filter && Number(filter?.currentAya)) ? 'active' : ''}
-                               onClick={() => props.onSelect({key: 'currentAya', value: (index + 1).toString()})}>
-                    <span>{AyaNumber + 1}</span>
+                               className={AyaNumber === (filter && Number(filter?.currentAya)) ? 'active' : ''}
+                               onClick={() => onSelect({key: 'currentAya', value: AyaNumber.toString()})}>
+                    <span>{AyaNumber}</span>
                 </Button>
 
             })

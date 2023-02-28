@@ -1,13 +1,14 @@
 import './QuranTafseer.scss'
 import {TafseerText} from "./TafseerText/TafseerText";
 import {QuranDataPageTafseerDetails} from "../../../quranData";
+import {ForwardedRef, forwardRef} from "react";
 
-export const QuranTafseer = () => {
-    return <div className='quran-tafseer'>
+export const QuranTafseer = forwardRef((props, ref: ForwardedRef<HTMLDivElement>) => {
+    return <div className='quran-tafseer' ref={ref}>
         {
             QuranDataPageTafseerDetails.map(({text, highlighterId}, index) => {
                 return <TafseerText highlighterId={highlighterId} key={index} text={text} ayaNumber={highlighterId}/>
             })
         }
     </div>
-}
+});

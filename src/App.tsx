@@ -1,41 +1,37 @@
-import React, {useCallback} from 'react';
+import React, {useEffect} from 'react';
 import './App.scss'
 import {Quran} from "./components/Quran/Quran";
 import {Header} from "./components/Header/Header";
-import {Modal} from "./components/ui-components/Modal/Modal";
-import {SuraModal} from "./components/ui-components/SuraModal/SuraModal";
-import {useDispatch, useSelector} from "react-redux";
-import {getActiveModals} from "./redux/selectors";
-import {setActiveModal, setValue} from "./redux/quran.slice";
-import {AyaModal} from "./components/ui-components/AyaModal/AyaModal";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Container} from "react-bootstrap";
+import {SuraList} from "./quranData";
+import {ModalsContainer} from "./components/ModalsContainer/ModalsContainer";
 
 function App() {
-    const {isSuraModalOpen, isAyaModalOpen, isPageModalOpen} = useSelector(getActiveModals)
-    const dispatch = useDispatch()
 
-    const resetModal = useCallback((activateModalKey: string) => {
-        dispatch(setActiveModal({[activateModalKey]: false}))
+
+    useEffect(() => {
+        const jsonData = SuraList.map((item, index) => {
+            const [start, ayaCount, order, ruks, arabicName, frankName, englishName, suraType, pageStart, pageEnd] = item
+            return {
+                index: index + 1,
+                arabicName,
+                englishName,
+                frankName,
+                ayaCount,
+                suraType,
+                pageStart,
+                pageEnd
+            }
+        })
+
+        console.log(JSON.stringify(jsonData))
     }, [])
-
-    const onSelectValue = ({value, key}: { key: string, value: string }, modalId: string) => {
-        dispatch(setValue({value, key}))
-        resetModal(modalId)
-    }
 
     return (
         <div className="App">
-            {isSuraModalOpen && <Modal title='إختر السورة' onClose={() => resetModal('isSuraModalOpen')}>
-                <SuraModal onSelect={(data) => onSelectValue(data, 'isSuraModalOpen')}/>
-            </Modal>
-            }
-
-            {isAyaModalOpen && <Modal title='إختر الايه' onClose={() => resetModal('isAyaModalOpen')}>
-                <AyaModal onSelect={(data) => onSelectValue(data, 'isAyaModalOpen')}/>
-            </Modal>
-            }
-            <Container >
+            <ModalsContainer />
+            <Container>
                 <Header/>
                 <Quran/>
             </Container>

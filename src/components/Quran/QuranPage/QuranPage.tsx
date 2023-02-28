@@ -1,22 +1,24 @@
 import './QuranPage.scss';
-import {QuranDataPageDetails} from "../../../quranData";
-import {Highlighter} from "./Highlighter/Highlighter";
+import {ForwardedRef, forwardRef} from "react";
 
-export const QuranPage = () => {
-    return <div className='quran-page'>
-        <img className='quran-page__img' src={require('../../../assets/images/3.png')} alt='3'/>
-        {
-            QuranDataPageDetails.map(({highlighterId, ayaNumber, styles}, index) => {
-                const [width, top, left] = styles
-                return <Highlighter
-                    key={ayaNumber + index}
-                    top={top}
-                    left={left}
-                    width={width}
-                    ayaNumber={ayaNumber}
-                    highlighterId={highlighterId}/>
-            })
+export const QuranPage = forwardRef((props: { pageNumber: string }, ref: ForwardedRef<HTMLDivElement>) => {
+    return <div className='quran-page page' ref={ref}>
+        <div className='page-content'>
+            <img className='quran-page__img' src={require(`../../../assets/images/pages/${props.pageNumber}.png`)}
+                 alt='3'/>
+        </div>
+        {/*{*/}
+        {/*    QuranDataPageDetails.map(({highlighterId, ayaNumber, styles}, index) => {*/}
+        {/*        const [width, top, left] = styles*/}
+        {/*        return <Highlighter*/}
+        {/*            key={ayaNumber + index}*/}
+        {/*            top={top}*/}
+        {/*            left={left}*/}
+        {/*            width={width}*/}
+        {/*            ayaNumber={ayaNumber}*/}
+        {/*            highlighterId={highlighterId}/>*/}
+        {/*    })*/}
 
-        }
+        {/*}*/}
     </div>
-}
+});
