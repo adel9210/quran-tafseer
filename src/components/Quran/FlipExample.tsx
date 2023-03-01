@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from "react";
+import React, {useCallback, useEffect, useRef, useState} from "react";
 import HTMLFlipBook from "react-pageflip";
 import {QuranPage} from "./QuranPage/QuranPage";
 import {useDispatch, useSelector} from "react-redux";
@@ -11,13 +11,19 @@ export const DemoBook = () => {
     const {filter} = useSelector(getTafseerState)
     const [activePage, setActivePage] = useState<number>()
 
-    const onPage = (event: Record<string, number>) => {
-        setActivePage(event.data)
-        // dispatch(setFilter({
-        //     key: 'currentPage',
-        //     value: event.data.toString()
-        // }))
-    };
+    const onPage = useCallback((event: Record<string, number>) => {
+        // setActivePage((oldValue) => {
+        //     const newValue = event.data
+        //     if (newValue !== oldValue) {
+        //         dispatch(setFilter({
+        //             key: 'currentPage',
+        //             value: newValue.toString()
+        //         }))
+        //     }
+        //     return newValue
+        // })
+
+    }, [activePage])
 
 
     const handleNavigation = (event: React.MouseEvent, state: 'next' | 'prev') => {
@@ -34,7 +40,7 @@ export const DemoBook = () => {
         if (Number(filter?.currentPage) !== activePage) {
             const flip = flipBookRef?.current?.pageFlip()
             if (flip){
-                flip.turnToPage?.(Number(filter?.currentPage))
+                flip.flip?.(Number(filter?.currentPage))
             }
         }
     }, [filter])
@@ -47,7 +53,7 @@ export const DemoBook = () => {
                 height={690}
                 maxShadowOpacity={0.5}
                 showCover={false}
-                mobileScrollSupport={true}
+                mobileScrollSupport={false}
                 className="demo-book"
                 ref={flipBookRef}
                 onFlip={onPage}
