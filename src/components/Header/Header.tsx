@@ -5,9 +5,9 @@ import 'react-h5-audio-player/lib/styles.css';
 import 'react-h5-audio-player/src/styles.scss'
 import {SelectModal} from "../ui-components/SelectModal/SelectModal";
 import {useDispatch, useSelector} from "react-redux";
-import {setActiveModal} from "../../redux/quran.slice";
+import {setActiveModal, setFilter} from "../../redux/quran.slice";
 import {getTafseerState} from "../../redux/selectors";
-import {useEffect, useState} from "react";
+import {useCallback, useEffect, useState} from "react";
 import {Col, Container, Row} from "react-bootstrap";
 import {getSuraDetails} from "../../services/client.service";
 import {ModalTypes, Sura} from "../../types";
@@ -27,11 +27,11 @@ const tafseerOptions = [
 ]
 
 const sheikhOptions = [
-    {value: 'option 1', label: 'الحصري'},
-    {value: 'option 2', label: 'محمد صديق'},
-    {value: 'option 3', label: 'عبدالباسط عبدالصمد'},
-    {value: 'option 4', label: 'المنشاوي'},
-    {value: 'option 5', label: 'مشاري العفاسي'},
+    {value: 'Husary_64kbps', label: 'الحصري'},
+    {value: 'Nasser_Alqatami_128kbps', label: 'ناصر القطامي'},
+    {value: 'Abdul_Basit_Murattal_64kbps', label: 'عبدالباسط عبدالصمد'},
+    {value: 'Minshawy_Murattal_128kbps', label: 'المنشاوي'},
+    {value: 'Alafasy_64kbps', label: 'مشاري العفاسي'},
 ]
 
 const style = {
@@ -51,8 +51,23 @@ export const Header = () => {
     const {filter} = useSelector(getTafseerState)
     const [selectedSura, setSelectedSura] = useState<Sura>()
 
+    const getCurrentLink = useCallback(() => {
+        const sura = Number(filter?.currentSura).toLocaleString('en-US', {minimumIntegerDigits: 3, useGrouping: false})
+        const aya = Number(filter?.currentAya).toLocaleString('en-US', {minimumIntegerDigits: 3, useGrouping: false})
+        const sheikh = filter?.currentSheikh
+
+        return `https://quran.ksu.edu.sa/ayat/mp3/${sheikh}/${sura}${aya}.mp3`
+    }, [filter])
+
     const onModalSelectClick = (type: ModalTypes) => {
         dispatch(setActiveModal({[type]: true}))
+    }
+
+    const goToNextAya = () => {
+        dispatch(setFilter({
+            key: 'currentAya',
+            value: (Number(filter?.currentAya) + 1).toString()
+        }))
     }
 
     useEffect(() => {
@@ -111,7 +126,17 @@ export const Header = () => {
                         <div className='header__pair__item'>
                             <div className='header__pair__item__control'>
                                 <label className='header__pair__item__control__label'>القارئ</label>
-                                <Select styles={style} options={sheikhOptions} placeholder='إختر'/>
+                                <Select
+                                    defaultValue={sheikhOptions[0]}
+                                    styles={style} options={sheikhOptions}
+                                    onChange={(item) => {
+                                        console.log(item?.value)
+                                        dispatch(setFilter({
+                                            key: 'currentSheikh',
+                                            value: item?.value || ''
+                                        }))
+                                    }}
+                                    placeholder='إختر'/>
                             </div>
                             <div className='header__pair__item__control'>
                                 <label className='header__pair__item__control__label'>إعدادات التكرار</label>
@@ -121,9 +146,11 @@ export const Header = () => {
                         <div className='header__pair__item header__pair__item__control'>
                             <AudioPlayer
                                 style={{direction: 'ltr'}}
-                                autoPlay
-                                src="https://quran.ksu.edu.sa/ayat/mp3/Husary_64kbps/002007.mp3"
+                                autoPlay={false}
+                                src={getCurrentLink()}
                                 onPlay={e => console.log("onPlay")}
+                                autoPlayAfterSrcChange={true}
+                                onEnded={goToNextAya}
                                 // other props here
                             />
                         </div>

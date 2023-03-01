@@ -4,6 +4,8 @@ import {QuranDataPageTafseerDetails} from "../../../quranData";
 import {ForwardedRef, forwardRef} from "react";
 
 export const QuranTafseer = forwardRef((props, ref: ForwardedRef<HTMLDivElement>) => {
+    // const {filter} = useSelector(getTafseerState)
+
     return <div className='quran-tafseer' ref={ref}>
         {
             QuranDataPageTafseerDetails.map(({text, highlighterId}, index) => {

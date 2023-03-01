@@ -1,5 +1,6 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit'
 import {filterTypes, Sura} from "../types";
+import {getSuraList} from "../services/client.service";
 
 export interface QuranSliceType {
     highlighterHoverId: string
@@ -16,6 +17,7 @@ export interface QuranSliceType {
         currentSura?: string,
         currentAya?: string,
         currentGoz2?: string,
+        currentSheikh?:string
     }
 }
 
@@ -24,9 +26,12 @@ const initialState: Partial<QuranSliceType> = {
         currentAya: '1',
         currentSura: '1',
         currentPage: '1',
-        currentGoz2: '1'
+        currentGoz2: '1',
+        currentSheikh: 'Husary_64kbps'
     }
 }
+
+// https://quran.ksu.edu.sa/ayat/mp3/Alafasy_64kbps/001007.mp3
 
 const getSuraGoz2 = (pageStart: number = 1) => {
     if (pageStart <= 20) {
@@ -34,6 +39,14 @@ const getSuraGoz2 = (pageStart: number = 1) => {
     }
 
     return Math.round((pageStart) / 20).toString()
+}
+
+const getSuraByGoz2Number = (goz2Number: number) => {
+    return getSuraList().filter(sura => sura.pageEnd >= goz2Number * 20 - 20)[0]
+}
+
+const getSuraByPageNumber = (pageNumber: number) => {
+    return getSuraList().filter(sura => sura.pageEnd >= pageNumber)[0]
 }
 
 export const quranSlice = createSlice({
@@ -62,6 +75,19 @@ export const quranSlice = createSlice({
                         currentAya: '1',
                         currentPage: sura?.pageStart.toString(),
                         currentGoz2: getSuraGoz2(sura?.pageStart)
+                    }
+                    break
+                case 'currentGoz2':
+                    filter = {
+                        ...filter,
+                        currentPage: (Number(filter.currentGoz2) * 20 - 20 + 2).toString(),
+                        currentSura: getSuraByGoz2Number(Number(filter.currentGoz2)).index.toString(),
+                    }
+                    break
+                case 'currentPage':
+                    filter = {
+                        ...filter,
+                        currentSura: getSuraByPageNumber(Number(filter.currentPage)).index.toString(),
                     }
                     break
 

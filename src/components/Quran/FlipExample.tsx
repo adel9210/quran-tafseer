@@ -2,7 +2,6 @@ import React, {useCallback, useEffect, useRef, useState} from "react";
 import HTMLFlipBook from "react-pageflip";
 import {QuranPage} from "./QuranPage/QuranPage";
 import {useDispatch, useSelector} from "react-redux";
-import {setFilter} from "../../redux/quran.slice";
 import {getTafseerState} from "../../redux/selectors";
 
 export const DemoBook = () => {
@@ -40,7 +39,10 @@ export const DemoBook = () => {
         if (Number(filter?.currentPage) !== activePage) {
             const flip = flipBookRef?.current?.pageFlip()
             if (flip){
-                flip.flip?.(Number(filter?.currentPage))
+                setTimeout(() => {
+                    const nextPage = Number(filter?.currentPage)
+                    flip.flip?.(nextPage)
+                }, 500)
             }
         }
     }, [filter])
@@ -48,22 +50,25 @@ export const DemoBook = () => {
     return (
         <div>
             {/*@ts-ignore*/}
-            <HTMLFlipBook
-                width={950 / 2}
-                height={690}
-                maxShadowOpacity={0.5}
-                showCover={false}
-                mobileScrollSupport={false}
-                className="demo-book"
-                ref={flipBookRef}
-                onFlip={onPage}
-            >
+            {/*<HTMLFlipBook*/}
+            {/*    width={950 / 2}*/}
+            {/*    height={690}*/}
+            {/*    maxShadowOpacity={0.5}*/}
+            {/*    showCover={false}*/}
+            {/*    mobileScrollSupport={false}*/}
+            {/*    className="demo-book"*/}
+            {/*    ref={flipBookRef}*/}
+            {/*    onFlip={onPage}*/}
+            {/*    startPage={1}*/}
+            {/*    startZIndex={1}*/}
+            {/*>*/}
                 {
-                    Array.from(Array(604).keys()).map((page) => <QuranPage key={page}
-                                                                                     pageNumber={(page + 1).toString()}/>)
+                    Array.from(Array(604).keys()).map((page) => {
+                        return <QuranPage key={page}/>
+                    })
                 }
 
-            </HTMLFlipBook>
+            {/*</HTMLFlipBook>*/}
             <div className='quran__controls'>
                 <a href="" onClick={(e) => handleNavigation(e, 'prev')}>
                     <img src={require('../../assets/images/right-arrow.png')} alt=''/>

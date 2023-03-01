@@ -14,10 +14,8 @@ export const SuraModal = () => {
     const dispatch = useDispatch()
 
     useEffect(() => {
-        (async () => {
-            const response = await getSuraList()
-            setSuraList(response.data)
-        })()
+        const response = getSuraList()
+        setSuraList(response)
     }, [])
 
     const onSelect = (data: { key: filterTypes, value: string }, sura: Sura) => {

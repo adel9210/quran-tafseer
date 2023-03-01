@@ -7,7 +7,7 @@ interface Props {
 
 export const QuranPageImage = (props: Props) => {
     return <>
-        <img className='quran-page__img' src={require(`../../../assets/images/pages/${props.pageNumber}.png`)}
+        <img className='quran-page__img' src={require(`../../../assets/images/pages/${props?.pageNumber}.png`)}
              alt='3'/>
         {
             QuranDataPageDetails.map(({highlighterId, ayaNumber, styles}, index) => {

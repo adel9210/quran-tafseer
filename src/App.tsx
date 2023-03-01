@@ -10,23 +10,23 @@ import {ModalsContainer} from "./components/ModalsContainer/ModalsContainer";
 function App() {
 
 
-    useEffect(() => {
-        const jsonData = SuraList.map((item, index) => {
-            const [start, ayaCount, order, ruks, arabicName, frankName, englishName, suraType, pageStart, pageEnd] = item
-            return {
-                index: index + 1,
-                arabicName,
-                englishName,
-                frankName,
-                ayaCount,
-                suraType,
-                pageStart,
-                pageEnd
-            }
-        })
-
-        console.log(JSON.stringify(jsonData))
-    }, [])
+    // useEffect(() => {
+    //     const jsonData = SuraList.map((item, index) => {
+    //         const [start, ayaCount, order, ruks, arabicName, frankName, englishName, suraType, pageStart, pageEnd] = item
+    //         return {
+    //             index: index + 1,
+    //             arabicName,
+    //             englishName,
+    //             frankName,
+    //             ayaCount,
+    //             suraType,
+    //             pageStart,
+    //             pageEnd
+    //         }
+    //     })
+    //
+    //     console.log(JSON.stringify(jsonData))
+    // }, [])
 
     return (
         <div className="App">

@@ -3,7 +3,7 @@ export interface Sura {
     arabicName: string,
     englishName: string,
     frankName: string,
-    ayaCount: string,
+    ayaCount: number,
     suraType: string,
     pageStart: number,
     pageEnd: number
@@ -11,4 +11,4 @@ export interface Sura {
 
 
 export type ModalTypes = 'isSuraModalOpen' | 'isAyaModalOpen' | 'isPageModalOpen' | 'isGoz2ModalOpen'
-export type filterTypes = 'currentPage' | 'currentSura' | 'currentAya' | 'currentGoz2'
+export type filterTypes = 'currentPage' | 'currentSura' | 'currentAya' | 'currentGoz2' | 'currentSheikh'

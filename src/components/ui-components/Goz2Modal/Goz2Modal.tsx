@@ -12,7 +12,7 @@ export const Goz2Modal = () => {
 
     const onSelect = (data: { key: filterTypes, value: string }) => {
         dispatch(setFilter(data))
-        dispatch(setActiveModal({['isPageModalOpen']: false}))
+        dispatch(setActiveModal({['isGoz2ModalOpen']: false}))
     }
 
 
