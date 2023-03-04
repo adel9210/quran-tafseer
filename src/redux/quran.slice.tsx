@@ -1,6 +1,11 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit'
 import {filterTypes, Sura} from "../types";
-import {getSuraList} from "../services/client.service";
+import {
+    getGoz2Details,
+    getPageDetails, getQuarterDetail,
+    getSuraList,
+    getSuraQuarter
+} from "../services/client.service";
 
 export interface QuranSliceType {
     highlighterHoverId: string
@@ -17,7 +22,8 @@ export interface QuranSliceType {
         currentSura?: string,
         currentAya?: string,
         currentGoz2?: string,
-        currentSheikh?:string
+        currentQuarter?: string,
+        currentSheikh?: string
     }
 }
 
@@ -27,6 +33,7 @@ const initialState: Partial<QuranSliceType> = {
         currentSura: '1',
         currentPage: '1',
         currentGoz2: '1',
+        currentQuarter: '1',
         currentSheikh: 'Husary_64kbps'
     }
 }
@@ -47,6 +54,26 @@ const getSuraByGoz2Number = (goz2Number: number) => {
 
 const getSuraByPageNumber = (pageNumber: number) => {
     return getSuraList().filter(sura => sura.pageEnd >= pageNumber)[0]
+}
+
+const getAyaByPageNumber = (pageNumber: number) => {
+    return getPageDetails(pageNumber)[0]
+}
+
+const getAyaByGoz2Number = (goz2Number: number) => {
+    return getGoz2Details(goz2Number)[0]
+}
+
+const getPageByGoz2Number = (goz2Number: number) => {
+    if (goz2Number === 1) {
+        return '1'
+    }
+
+    return (goz2Number * 20 - 20 + 2).toString()
+}
+
+const getQuarterDetails = (quarterIndex:number) => {
+  return getQuarterDetail(quarterIndex)[0]
 }
 
 export const quranSlice = createSlice({
@@ -74,20 +101,32 @@ export const quranSlice = createSlice({
                         ...filter,
                         currentAya: '1',
                         currentPage: sura?.pageStart.toString(),
-                        currentGoz2: getSuraGoz2(sura?.pageStart)
+                        currentGoz2: getSuraGoz2(sura?.pageStart),
+                        currentQuarter: getSuraQuarter(sura?.index || 0)
                     }
                     break
                 case 'currentGoz2':
                     filter = {
                         ...filter,
-                        currentPage: (Number(filter.currentGoz2) * 20 - 20 + 2).toString(),
+                        currentPage: getPageByGoz2Number(Number(filter.currentGoz2)),
                         currentSura: getSuraByGoz2Number(Number(filter.currentGoz2)).index.toString(),
+                        currentAya: getAyaByGoz2Number(Number(filter.currentGoz2)).ayaNumber.toString(),
+                        currentQuarter: '1'
+                    }
+                    break
+                case 'currentQuarter':
+                    filter = {
+                        ...filter,
+                        currentSura: getQuarterDetails(Number(filter.currentQuarter) + Number(filter.currentGoz2) * 8 - 8).suraNumber.toString(),
+                        currentAya: getQuarterDetails(Number(filter.currentQuarter) + Number(filter.currentGoz2) * 8 - 8).ayaNumber.toString(),
+                        currentPage: Math.round((Number(filter.currentGoz2) * 20 + 20 /  Number(filter.currentQuarter) - 20)).toString()
                     }
                     break
                 case 'currentPage':
                     filter = {
                         ...filter,
                         currentSura: getSuraByPageNumber(Number(filter.currentPage)).index.toString(),
+                        currentAya: getAyaByPageNumber(Number(filter.currentPage)).ayaNumber.toString()
                     }
                     break
 

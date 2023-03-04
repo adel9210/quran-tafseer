@@ -1,0 +1,1202 @@
+[
+  {
+    "quarterIndex": 1,
+    "suraNumber": 1,
+    "ayaNumber": 1
+  },
+  {
+    "quarterIndex": 2,
+    "suraNumber": 2,
+    "ayaNumber": 26
+  },
+  {
+    "quarterIndex": 3,
+    "suraNumber": 2,
+    "ayaNumber": 44
+  },
+  {
+    "quarterIndex": 4,
+    "suraNumber": 2,
+    "ayaNumber": 60
+  },
+  {
+    "quarterIndex": 5,
+    "suraNumber": 2,
+    "ayaNumber": 75
+  },
+  {
+    "quarterIndex": 6,
+    "suraNumber": 2,
+    "ayaNumber": 92
+  },
+  {
+    "quarterIndex": 7,
+    "suraNumber": 2,
+    "ayaNumber": 106
+  },
+  {
+    "quarterIndex": 8,
+    "suraNumber": 2,
+    "ayaNumber": 124
+  },
+  {
+    "quarterIndex": 9,
+    "suraNumber": 2,
+    "ayaNumber": 142
+  },
+  {
+    "quarterIndex": 10,
+    "suraNumber": 2,
+    "ayaNumber": 158
+  },
+  {
+    "quarterIndex": 11,
+    "suraNumber": 2,
+    "ayaNumber": 177
+  },
+  {
+    "quarterIndex": 12,
+    "suraNumber": 2,
+    "ayaNumber": 189
+  },
+  {
+    "quarterIndex": 13,
+    "suraNumber": 2,
+    "ayaNumber": 203
+  },
+  {
+    "quarterIndex": 14,
+    "suraNumber": 2,
+    "ayaNumber": 219
+  },
+  {
+    "quarterIndex": 15,
+    "suraNumber": 2,
+    "ayaNumber": 233
+  },
+  {
+    "quarterIndex": 16,
+    "suraNumber": 2,
+    "ayaNumber": 243
+  },
+  {
+    "quarterIndex": 17,
+    "suraNumber": 2,
+    "ayaNumber": 253
+  },
+  {
+    "quarterIndex": 18,
+    "suraNumber": 2,
+    "ayaNumber": 263
+  },
+  {
+    "quarterIndex": 19,
+    "suraNumber": 2,
+    "ayaNumber": 272
+  },
+  {
+    "quarterIndex": 20,
+    "suraNumber": 2,
+    "ayaNumber": 283
+  },
+  {
+    "quarterIndex": 21,
+    "suraNumber": 3,
+    "ayaNumber": 15
+  },
+  {
+    "quarterIndex": 22,
+    "suraNumber": 3,
+    "ayaNumber": 33
+  },
+  {
+    "quarterIndex": 23,
+    "suraNumber": 3,
+    "ayaNumber": 52
+  },
+  {
+    "quarterIndex": 24,
+    "suraNumber": 3,
+    "ayaNumber": 75
+  },
+  {
+    "quarterIndex": 25,
+    "suraNumber": 3,
+    "ayaNumber": 93
+  },
+  {
+    "quarterIndex": 26,
+    "suraNumber": 3,
+    "ayaNumber": 113
+  },
+  {
+    "quarterIndex": 27,
+    "suraNumber": 3,
+    "ayaNumber": 133
+  },
+  {
+    "quarterIndex": 28,
+    "suraNumber": 3,
+    "ayaNumber": 153
+  },
+  {
+    "quarterIndex": 29,
+    "suraNumber": 3,
+    "ayaNumber": 171
+  },
+  {
+    "quarterIndex": 30,
+    "suraNumber": 3,
+    "ayaNumber": 186
+  },
+  {
+    "quarterIndex": 31,
+    "suraNumber": 4,
+    "ayaNumber": 1
+  },
+  {
+    "quarterIndex": 32,
+    "suraNumber": 4,
+    "ayaNumber": 12
+  },
+  {
+    "quarterIndex": 33,
+    "suraNumber": 4,
+    "ayaNumber": 24
+  },
+  {
+    "quarterIndex": 34,
+    "suraNumber": 4,
+    "ayaNumber": 36
+  },
+  {
+    "quarterIndex": 35,
+    "suraNumber": 4,
+    "ayaNumber": 58
+  },
+  {
+    "quarterIndex": 36,
+    "suraNumber": 4,
+    "ayaNumber": 74
+  },
+  {
+    "quarterIndex": 37,
+    "suraNumber": 4,
+    "ayaNumber": 88
+  },
+  {
+    "quarterIndex": 38,
+    "suraNumber": 4,
+    "ayaNumber": 100
+  },
+  {
+    "quarterIndex": 39,
+    "suraNumber": 4,
+    "ayaNumber": 114
+  },
+  {
+    "quarterIndex": 40,
+    "suraNumber": 4,
+    "ayaNumber": 135
+  },
+  {
+    "quarterIndex": 41,
+    "suraNumber": 4,
+    "ayaNumber": 148
+  },
+  {
+    "quarterIndex": 42,
+    "suraNumber": 4,
+    "ayaNumber": 163
+  },
+  {
+    "quarterIndex": 43,
+    "suraNumber": 5,
+    "ayaNumber": 1
+  },
+  {
+    "quarterIndex": 44,
+    "suraNumber": 5,
+    "ayaNumber": 12
+  },
+  {
+    "quarterIndex": 45,
+    "suraNumber": 5,
+    "ayaNumber": 27
+  },
+  {
+    "quarterIndex": 46,
+    "suraNumber": 5,
+    "ayaNumber": 41
+  },
+  {
+    "quarterIndex": 47,
+    "suraNumber": 5,
+    "ayaNumber": 51
+  },
+  {
+    "quarterIndex": 48,
+    "suraNumber": 5,
+    "ayaNumber": 67
+  },
+  {
+    "quarterIndex": 49,
+    "suraNumber": 5,
+    "ayaNumber": 82
+  },
+  {
+    "quarterIndex": 50,
+    "suraNumber": 5,
+    "ayaNumber": 97
+  },
+  {
+    "quarterIndex": 51,
+    "suraNumber": 5,
+    "ayaNumber": 109
+  },
+  {
+    "quarterIndex": 52,
+    "suraNumber": 6,
+    "ayaNumber": 13
+  },
+  {
+    "quarterIndex": 53,
+    "suraNumber": 6,
+    "ayaNumber": 36
+  },
+  {
+    "quarterIndex": 54,
+    "suraNumber": 6,
+    "ayaNumber": 59
+  },
+  {
+    "quarterIndex": 55,
+    "suraNumber": 6,
+    "ayaNumber": 74
+  },
+  {
+    "quarterIndex": 56,
+    "suraNumber": 6,
+    "ayaNumber": 95
+  },
+  {
+    "quarterIndex": 57,
+    "suraNumber": 6,
+    "ayaNumber": 111
+  },
+  {
+    "quarterIndex": 58,
+    "suraNumber": 6,
+    "ayaNumber": 127
+  },
+  {
+    "quarterIndex": 59,
+    "suraNumber": 6,
+    "ayaNumber": 141
+  },
+  {
+    "quarterIndex": 60,
+    "suraNumber": 6,
+    "ayaNumber": 151
+  },
+  {
+    "quarterIndex": 61,
+    "suraNumber": 7,
+    "ayaNumber": 1
+  },
+  {
+    "quarterIndex": 62,
+    "suraNumber": 7,
+    "ayaNumber": 31
+  },
+  {
+    "quarterIndex": 63,
+    "suraNumber": 7,
+    "ayaNumber": 47
+  },
+  {
+    "quarterIndex": 64,
+    "suraNumber": 7,
+    "ayaNumber": 65
+  },
+  {
+    "quarterIndex": 65,
+    "suraNumber": 7,
+    "ayaNumber": 88
+  },
+  {
+    "quarterIndex": 66,
+    "suraNumber": 7,
+    "ayaNumber": 117
+  },
+  {
+    "quarterIndex": 67,
+    "suraNumber": 7,
+    "ayaNumber": 142
+  },
+  {
+    "quarterIndex": 68,
+    "suraNumber": 7,
+    "ayaNumber": 156
+  },
+  {
+    "quarterIndex": 69,
+    "suraNumber": 7,
+    "ayaNumber": 171
+  },
+  {
+    "quarterIndex": 70,
+    "suraNumber": 7,
+    "ayaNumber": 189
+  },
+  {
+    "quarterIndex": 71,
+    "suraNumber": 8,
+    "ayaNumber": 1
+  },
+  {
+    "quarterIndex": 72,
+    "suraNumber": 8,
+    "ayaNumber": 22
+  },
+  {
+    "quarterIndex": 73,
+    "suraNumber": 8,
+    "ayaNumber": 41
+  },
+  {
+    "quarterIndex": 74,
+    "suraNumber": 8,
+    "ayaNumber": 61
+  },
+  {
+    "quarterIndex": 75,
+    "suraNumber": 9,
+    "ayaNumber": 1
+  },
+  {
+    "quarterIndex": 76,
+    "suraNumber": 9,
+    "ayaNumber": 19
+  },
+  {
+    "quarterIndex": 77,
+    "suraNumber": 9,
+    "ayaNumber": 34
+  },
+  {
+    "quarterIndex": 78,
+    "suraNumber": 9,
+    "ayaNumber": 46
+  },
+  {
+    "quarterIndex": 79,
+    "suraNumber": 9,
+    "ayaNumber": 60
+  },
+  {
+    "quarterIndex": 80,
+    "suraNumber": 9,
+    "ayaNumber": 75
+  },
+  {
+    "quarterIndex": 81,
+    "suraNumber": 9,
+    "ayaNumber": 93
+  },
+  {
+    "quarterIndex": 82,
+    "suraNumber": 9,
+    "ayaNumber": 111
+  },
+  {
+    "quarterIndex": 83,
+    "suraNumber": 9,
+    "ayaNumber": 122
+  },
+  {
+    "quarterIndex": 84,
+    "suraNumber": 10,
+    "ayaNumber": 11
+  },
+  {
+    "quarterIndex": 85,
+    "suraNumber": 10,
+    "ayaNumber": 26
+  },
+  {
+    "quarterIndex": 86,
+    "suraNumber": 10,
+    "ayaNumber": 53
+  },
+  {
+    "quarterIndex": 87,
+    "suraNumber": 10,
+    "ayaNumber": 71
+  },
+  {
+    "quarterIndex": 88,
+    "suraNumber": 10,
+    "ayaNumber": 90
+  },
+  {
+    "quarterIndex": 89,
+    "suraNumber": 11,
+    "ayaNumber": 6
+  },
+  {
+    "quarterIndex": 90,
+    "suraNumber": 11,
+    "ayaNumber": 24
+  },
+  {
+    "quarterIndex": 91,
+    "suraNumber": 11,
+    "ayaNumber": 41
+  },
+  {
+    "quarterIndex": 92,
+    "suraNumber": 11,
+    "ayaNumber": 61
+  },
+  {
+    "quarterIndex": 93,
+    "suraNumber": 11,
+    "ayaNumber": 84
+  },
+  {
+    "quarterIndex": 94,
+    "suraNumber": 11,
+    "ayaNumber": 108
+  },
+  {
+    "quarterIndex": 95,
+    "suraNumber": 12,
+    "ayaNumber": 7
+  },
+  {
+    "quarterIndex": 96,
+    "suraNumber": 12,
+    "ayaNumber": 30
+  },
+  {
+    "quarterIndex": 97,
+    "suraNumber": 12,
+    "ayaNumber": 53
+  },
+  {
+    "quarterIndex": 98,
+    "suraNumber": 12,
+    "ayaNumber": 77
+  },
+  {
+    "quarterIndex": 99,
+    "suraNumber": 12,
+    "ayaNumber": 101
+  },
+  {
+    "quarterIndex": 100,
+    "suraNumber": 13,
+    "ayaNumber": 5
+  },
+  {
+    "quarterIndex": 101,
+    "suraNumber": 13,
+    "ayaNumber": 19
+  },
+  {
+    "quarterIndex": 102,
+    "suraNumber": 13,
+    "ayaNumber": 35
+  },
+  {
+    "quarterIndex": 103,
+    "suraNumber": 14,
+    "ayaNumber": 10
+  },
+  {
+    "quarterIndex": 104,
+    "suraNumber": 14,
+    "ayaNumber": 28
+  },
+  {
+    "quarterIndex": 105,
+    "suraNumber": 15,
+    "ayaNumber": 1
+  },
+  {
+    "quarterIndex": 106,
+    "suraNumber": 15,
+    "ayaNumber": 50
+  },
+  {
+    "quarterIndex": 107,
+    "suraNumber": 16,
+    "ayaNumber": 1
+  },
+  {
+    "quarterIndex": 108,
+    "suraNumber": 16,
+    "ayaNumber": 30
+  },
+  {
+    "quarterIndex": 109,
+    "suraNumber": 16,
+    "ayaNumber": 51
+  },
+  {
+    "quarterIndex": 110,
+    "suraNumber": 16,
+    "ayaNumber": 75
+  },
+  {
+    "quarterIndex": 111,
+    "suraNumber": 16,
+    "ayaNumber": 90
+  },
+  {
+    "quarterIndex": 112,
+    "suraNumber": 16,
+    "ayaNumber": 111
+  },
+  {
+    "quarterIndex": 113,
+    "suraNumber": 17,
+    "ayaNumber": 1
+  },
+  {
+    "quarterIndex": 114,
+    "suraNumber": 17,
+    "ayaNumber": 23
+  },
+  {
+    "quarterIndex": 115,
+    "suraNumber": 17,
+    "ayaNumber": 50
+  },
+  {
+    "quarterIndex": 116,
+    "suraNumber": 17,
+    "ayaNumber": 70
+  },
+  {
+    "quarterIndex": 117,
+    "suraNumber": 17,
+    "ayaNumber": 99
+  },
+  {
+    "quarterIndex": 118,
+    "suraNumber": 18,
+    "ayaNumber": 17
+  },
+  {
+    "quarterIndex": 119,
+    "suraNumber": 18,
+    "ayaNumber": 32
+  },
+  {
+    "quarterIndex": 120,
+    "suraNumber": 18,
+    "ayaNumber": 51
+  },
+  {
+    "quarterIndex": 121,
+    "suraNumber": 18,
+    "ayaNumber": 75
+  },
+  {
+    "quarterIndex": 122,
+    "suraNumber": 18,
+    "ayaNumber": 99
+  },
+  {
+    "quarterIndex": 123,
+    "suraNumber": 19,
+    "ayaNumber": 22
+  },
+  {
+    "quarterIndex": 124,
+    "suraNumber": 19,
+    "ayaNumber": 59
+  },
+  {
+    "quarterIndex": 125,
+    "suraNumber": 20,
+    "ayaNumber": 1
+  },
+  {
+    "quarterIndex": 126,
+    "suraNumber": 20,
+    "ayaNumber": 55
+  },
+  {
+    "quarterIndex": 127,
+    "suraNumber": 20,
+    "ayaNumber": 83
+  },
+  {
+    "quarterIndex": 128,
+    "suraNumber": 20,
+    "ayaNumber": 111
+  },
+  {
+    "quarterIndex": 129,
+    "suraNumber": 21,
+    "ayaNumber": 1
+  },
+  {
+    "quarterIndex": 130,
+    "suraNumber": 21,
+    "ayaNumber": 29
+  },
+  {
+    "quarterIndex": 131,
+    "suraNumber": 21,
+    "ayaNumber": 51
+  },
+  {
+    "quarterIndex": 132,
+    "suraNumber": 21,
+    "ayaNumber": 83
+  },
+  {
+    "quarterIndex": 133,
+    "suraNumber": 22,
+    "ayaNumber": 1
+  },
+  {
+    "quarterIndex": 134,
+    "suraNumber": 22,
+    "ayaNumber": 19
+  },
+  {
+    "quarterIndex": 135,
+    "suraNumber": 22,
+    "ayaNumber": 38
+  },
+  {
+    "quarterIndex": 136,
+    "suraNumber": 22,
+    "ayaNumber": 60
+  },
+  {
+    "quarterIndex": 137,
+    "suraNumber": 23,
+    "ayaNumber": 1
+  },
+  {
+    "quarterIndex": 138,
+    "suraNumber": 23,
+    "ayaNumber": 36
+  },
+  {
+    "quarterIndex": 139,
+    "suraNumber": 23,
+    "ayaNumber": 75
+  },
+  {
+    "quarterIndex": 140,
+    "suraNumber": 24,
+    "ayaNumber": 1
+  },
+  {
+    "quarterIndex": 141,
+    "suraNumber": 24,
+    "ayaNumber": 21
+  },
+  {
+    "quarterIndex": 142,
+    "suraNumber": 24,
+    "ayaNumber": 35
+  },
+  {
+    "quarterIndex": 143,
+    "suraNumber": 24,
+    "ayaNumber": 53
+  },
+  {
+    "quarterIndex": 144,
+    "suraNumber": 25,
+    "ayaNumber": 1
+  },
+  {
+    "quarterIndex": 145,
+    "suraNumber": 25,
+    "ayaNumber": 21
+  },
+  {
+    "quarterIndex": 146,
+    "suraNumber": 25,
+    "ayaNumber": 53
+  },
+  {
+    "quarterIndex": 147,
+    "suraNumber": 26,
+    "ayaNumber": 1
+  },
+  {
+    "quarterIndex": 148,
+    "suraNumber": 26,
+    "ayaNumber": 52
+  },
+  {
+    "quarterIndex": 149,
+    "suraNumber": 26,
+    "ayaNumber": 111
+  },
+  {
+    "quarterIndex": 150,
+    "suraNumber": 26,
+    "ayaNumber": 181
+  },
+  {
+    "quarterIndex": 151,
+    "suraNumber": 27,
+    "ayaNumber": 1
+  },
+  {
+    "quarterIndex": 152,
+    "suraNumber": 27,
+    "ayaNumber": 27
+  },
+  {
+    "quarterIndex": 153,
+    "suraNumber": 27,
+    "ayaNumber": 56
+  },
+  {
+    "quarterIndex": 154,
+    "suraNumber": 27,
+    "ayaNumber": 82
+  },
+  {
+    "quarterIndex": 155,
+    "suraNumber": 28,
+    "ayaNumber": 12
+  },
+  {
+    "quarterIndex": 156,
+    "suraNumber": 28,
+    "ayaNumber": 29
+  },
+  {
+    "quarterIndex": 157,
+    "suraNumber": 28,
+    "ayaNumber": 51
+  },
+  {
+    "quarterIndex": 158,
+    "suraNumber": 28,
+    "ayaNumber": 76
+  },
+  {
+    "quarterIndex": 159,
+    "suraNumber": 29,
+    "ayaNumber": 1
+  },
+  {
+    "quarterIndex": 160,
+    "suraNumber": 29,
+    "ayaNumber": 26
+  },
+  {
+    "quarterIndex": 161,
+    "suraNumber": 29,
+    "ayaNumber": 46
+  },
+  {
+    "quarterIndex": 162,
+    "suraNumber": 30,
+    "ayaNumber": 1
+  },
+  {
+    "quarterIndex": 163,
+    "suraNumber": 30,
+    "ayaNumber": 31
+  },
+  {
+    "quarterIndex": 164,
+    "suraNumber": 30,
+    "ayaNumber": 54
+  },
+  {
+    "quarterIndex": 165,
+    "suraNumber": 31,
+    "ayaNumber": 22
+  },
+  {
+    "quarterIndex": 166,
+    "suraNumber": 32,
+    "ayaNumber": 11
+  },
+  {
+    "quarterIndex": 167,
+    "suraNumber": 33,
+    "ayaNumber": 1
+  },
+  {
+    "quarterIndex": 168,
+    "suraNumber": 33,
+    "ayaNumber": 18
+  },
+  {
+    "quarterIndex": 169,
+    "suraNumber": 33,
+    "ayaNumber": 31
+  },
+  {
+    "quarterIndex": 170,
+    "suraNumber": 33,
+    "ayaNumber": 51
+  },
+  {
+    "quarterIndex": 171,
+    "suraNumber": 33,
+    "ayaNumber": 60
+  },
+  {
+    "quarterIndex": 172,
+    "suraNumber": 34,
+    "ayaNumber": 10
+  },
+  {
+    "quarterIndex": 173,
+    "suraNumber": 34,
+    "ayaNumber": 24
+  },
+  {
+    "quarterIndex": 174,
+    "suraNumber": 34,
+    "ayaNumber": 46
+  },
+  {
+    "quarterIndex": 175,
+    "suraNumber": 35,
+    "ayaNumber": 15
+  },
+  {
+    "quarterIndex": 176,
+    "suraNumber": 35,
+    "ayaNumber": 41
+  },
+  {
+    "quarterIndex": 177,
+    "suraNumber": 36,
+    "ayaNumber": 28
+  },
+  {
+    "quarterIndex": 178,
+    "suraNumber": 36,
+    "ayaNumber": 60
+  },
+  {
+    "quarterIndex": 179,
+    "suraNumber": 37,
+    "ayaNumber": 22
+  },
+  {
+    "quarterIndex": 180,
+    "suraNumber": 37,
+    "ayaNumber": 83
+  },
+  {
+    "quarterIndex": 181,
+    "suraNumber": 37,
+    "ayaNumber": 145
+  },
+  {
+    "quarterIndex": 182,
+    "suraNumber": 38,
+    "ayaNumber": 21
+  },
+  {
+    "quarterIndex": 183,
+    "suraNumber": 38,
+    "ayaNumber": 52
+  },
+  {
+    "quarterIndex": 184,
+    "suraNumber": 39,
+    "ayaNumber": 8
+  },
+  {
+    "quarterIndex": 185,
+    "suraNumber": 39,
+    "ayaNumber": 32
+  },
+  {
+    "quarterIndex": 186,
+    "suraNumber": 39,
+    "ayaNumber": 53
+  },
+  {
+    "quarterIndex": 187,
+    "suraNumber": 40,
+    "ayaNumber": 1
+  },
+  {
+    "quarterIndex": 188,
+    "suraNumber": 40,
+    "ayaNumber": 21
+  },
+  {
+    "quarterIndex": 189,
+    "suraNumber": 40,
+    "ayaNumber": 41
+  },
+  {
+    "quarterIndex": 190,
+    "suraNumber": 40,
+    "ayaNumber": 66
+  },
+  {
+    "quarterIndex": 191,
+    "suraNumber": 41,
+    "ayaNumber": 9
+  },
+  {
+    "quarterIndex": 192,
+    "suraNumber": 41,
+    "ayaNumber": 25
+  },
+  {
+    "quarterIndex": 193,
+    "suraNumber": 41,
+    "ayaNumber": 47
+  },
+  {
+    "quarterIndex": 194,
+    "suraNumber": 42,
+    "ayaNumber": 13
+  },
+  {
+    "quarterIndex": 195,
+    "suraNumber": 42,
+    "ayaNumber": 27
+  },
+  {
+    "quarterIndex": 196,
+    "suraNumber": 42,
+    "ayaNumber": 51
+  },
+  {
+    "quarterIndex": 197,
+    "suraNumber": 43,
+    "ayaNumber": 24
+  },
+  {
+    "quarterIndex": 198,
+    "suraNumber": 43,
+    "ayaNumber": 57
+  },
+  {
+    "quarterIndex": 199,
+    "suraNumber": 44,
+    "ayaNumber": 17
+  },
+  {
+    "quarterIndex": 200,
+    "suraNumber": 45,
+    "ayaNumber": 12
+  },
+  {
+    "quarterIndex": 201,
+    "suraNumber": 46,
+    "ayaNumber": 1
+  },
+  {
+    "quarterIndex": 202,
+    "suraNumber": 46,
+    "ayaNumber": 21
+  },
+  {
+    "quarterIndex": 203,
+    "suraNumber": 47,
+    "ayaNumber": 10
+  },
+  {
+    "quarterIndex": 204,
+    "suraNumber": 47,
+    "ayaNumber": 33
+  },
+  {
+    "quarterIndex": 205,
+    "suraNumber": 48,
+    "ayaNumber": 18
+  },
+  {
+    "quarterIndex": 206,
+    "suraNumber": 49,
+    "ayaNumber": 1
+  },
+  {
+    "quarterIndex": 207,
+    "suraNumber": 49,
+    "ayaNumber": 14
+  },
+  {
+    "quarterIndex": 208,
+    "suraNumber": 50,
+    "ayaNumber": 27
+  },
+  {
+    "quarterIndex": 209,
+    "suraNumber": 51,
+    "ayaNumber": 31
+  },
+  {
+    "quarterIndex": 210,
+    "suraNumber": 52,
+    "ayaNumber": 24
+  },
+  {
+    "quarterIndex": 211,
+    "suraNumber": 53,
+    "ayaNumber": 26
+  },
+  {
+    "quarterIndex": 212,
+    "suraNumber": 54,
+    "ayaNumber": 9
+  },
+  {
+    "quarterIndex": 213,
+    "suraNumber": 55,
+    "ayaNumber": 1
+  },
+  {
+    "quarterIndex": 214,
+    "suraNumber": 56,
+    "ayaNumber": 1
+  },
+  {
+    "quarterIndex": 215,
+    "suraNumber": 56,
+    "ayaNumber": 75
+  },
+  {
+    "quarterIndex": 216,
+    "suraNumber": 57,
+    "ayaNumber": 16
+  },
+  {
+    "quarterIndex": 217,
+    "suraNumber": 58,
+    "ayaNumber": 1
+  },
+  {
+    "quarterIndex": 218,
+    "suraNumber": 58,
+    "ayaNumber": 14
+  },
+  {
+    "quarterIndex": 219,
+    "suraNumber": 59,
+    "ayaNumber": 11
+  },
+  {
+    "quarterIndex": 220,
+    "suraNumber": 60,
+    "ayaNumber": 7
+  },
+  {
+    "quarterIndex": 221,
+    "suraNumber": 62,
+    "ayaNumber": 1
+  },
+  {
+    "quarterIndex": 222,
+    "suraNumber": 63,
+    "ayaNumber": 4
+  },
+  {
+    "quarterIndex": 223,
+    "suraNumber": 65,
+    "ayaNumber": 1
+  },
+  {
+    "quarterIndex": 224,
+    "suraNumber": 66,
+    "ayaNumber": 1
+  },
+  {
+    "quarterIndex": 225,
+    "suraNumber": 67,
+    "ayaNumber": 1
+  },
+  {
+    "quarterIndex": 226,
+    "suraNumber": 68,
+    "ayaNumber": 1
+  },
+  {
+    "quarterIndex": 227,
+    "suraNumber": 69,
+    "ayaNumber": 1
+  },
+  {
+    "quarterIndex": 228,
+    "suraNumber": 70,
+    "ayaNumber": 19
+  },
+  {
+    "quarterIndex": 229,
+    "suraNumber": 72,
+    "ayaNumber": 1
+  },
+  {
+    "quarterIndex": 230,
+    "suraNumber": 73,
+    "ayaNumber": 20
+  },
+  {
+    "quarterIndex": 231,
+    "suraNumber": 75,
+    "ayaNumber": 1
+  },
+  {
+    "quarterIndex": 232,
+    "suraNumber": 76,
+    "ayaNumber": 19
+  },
+  {
+    "quarterIndex": 233,
+    "suraNumber": 78,
+    "ayaNumber": 1
+  },
+  {
+    "quarterIndex": 234,
+    "suraNumber": 80,
+    "ayaNumber": 1
+  },
+  {
+    "quarterIndex": 235,
+    "suraNumber": 82,
+    "ayaNumber": 1
+  },
+  {
+    "quarterIndex": 236,
+    "suraNumber": 84,
+    "ayaNumber": 1
+  },
+  {
+    "quarterIndex": 237,
+    "suraNumber": 87,
+    "ayaNumber": 1
+  },
+  {
+    "quarterIndex": 238,
+    "suraNumber": 90,
+    "ayaNumber": 1
+  },
+  {
+    "quarterIndex": 239,
+    "suraNumber": 94,
+    "ayaNumber": 1
+  },
+  {
+    "quarterIndex": 240,
+    "suraNumber": 100,
+    "ayaNumber": 9
+  }
+]
