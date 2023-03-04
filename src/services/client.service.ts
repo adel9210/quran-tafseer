@@ -26,14 +26,31 @@ export const getSuraQuarter = (suraNumber: number): string => {
     return (Math.round(firstQuarter.quarterIndex / 8) + 1).toString()
 }
 
-export const getPageDetails = (pageNumber: number): typeof Pages=> {
+export const getPageDetails = (pageNumber: number): typeof Pages => {
     return Pages.filter(page => page.pageNumber === pageNumber)
 }
 
-export const getQuarterDetail = (quarterIndex: number): typeof Quarters=> {
+export const getPageDetailsBySuraAndAyaNumber = (suraNumber: number, ayaNumber: number): Partial<typeof Pages> => {
+    const selectedItem: typeof Pages = [];
+    for (let i = 0; i < Pages.length; i++) {
+        const page = Pages[i];
+        const nextIndex = (i + 1) > 114 ? 114 : (i + 1)
+        const nextPage = Pages[nextIndex]
+        if (page.suraNumber === suraNumber && ayaNumber >= page.startAyaNumber) {
+            if (suraNumber !== nextPage.suraNumber || ayaNumber < nextPage.startAyaNumber) {
+                selectedItem.push(page)
+                break
+            }
+        }
+    }
+
+    return selectedItem
+}
+
+export const getQuarterDetail = (quarterIndex: number): typeof Quarters => {
     return Quarters.filter(quarter => quarter.quarterIndex === quarterIndex)
 }
 
-export const getGoz2Details = (goz2Number: number): typeof Goz2Items=> {
+export const getGoz2Details = (goz2Number: number): typeof Goz2Items => {
     return Goz2Items.filter(page => page.goz2Number === goz2Number)
 }

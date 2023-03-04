@@ -2,7 +2,9 @@ import {createSlice, PayloadAction} from '@reduxjs/toolkit'
 import {filterTypes, Sura} from "../types";
 import {
     getGoz2Details,
-    getPageDetails, getQuarterDetail,
+    getPageDetails,
+    getPageDetailsBySuraAndAyaNumber,
+    getQuarterDetail,
     getSuraList,
     getSuraQuarter
 } from "../services/client.service";
@@ -72,8 +74,12 @@ const getPageByGoz2Number = (goz2Number: number) => {
     return (goz2Number * 20 - 20 + 2).toString()
 }
 
-const getQuarterDetails = (quarterIndex:number) => {
-  return getQuarterDetail(quarterIndex)[0]
+const getPageBySuraAndAyaNumber = (suraNumber: number, ayaNumber: number) => {
+    return getPageDetailsBySuraAndAyaNumber(suraNumber, ayaNumber)[0]
+}
+
+const getQuarterDetails = (quarterIndex: number) => {
+    return getQuarterDetail(quarterIndex)[0]
 }
 
 export const quranSlice = createSlice({
@@ -119,14 +125,20 @@ export const quranSlice = createSlice({
                         ...filter,
                         currentSura: getQuarterDetails(Number(filter.currentQuarter) + Number(filter.currentGoz2) * 8 - 8).suraNumber.toString(),
                         currentAya: getQuarterDetails(Number(filter.currentQuarter) + Number(filter.currentGoz2) * 8 - 8).ayaNumber.toString(),
-                        currentPage: Math.round((Number(filter.currentGoz2) * 20 + 20 /  Number(filter.currentQuarter) - 20)).toString()
+                        currentPage: getQuarterDetails(Number(filter.currentQuarter) + Number(filter.currentGoz2) * 8 - 8).pageNumber.toString(),
                     }
                     break
                 case 'currentPage':
                     filter = {
                         ...filter,
                         currentSura: getSuraByPageNumber(Number(filter.currentPage)).index.toString(),
-                        currentAya: getAyaByPageNumber(Number(filter.currentPage)).ayaNumber.toString()
+                        currentAya: getAyaByPageNumber(Number(filter.currentPage)).startAyaNumber.toString()
+                    }
+                    break
+                case 'currentAya':
+                    filter = {
+                        ...filter,
+                        currentPage: getPageBySuraAndAyaNumber(Number(filter.currentSura), Number(filter.currentAya))?.pageNumber.toString(),
                     }
                     break
 
