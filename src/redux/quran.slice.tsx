@@ -131,7 +131,7 @@ export const quranSlice = createSlice({
                 case 'currentPage':
                     filter = {
                         ...filter,
-                        currentSura: getSuraByPageNumber(Number(filter.currentPage)).index.toString(),
+                        currentSura: getSuraByPageNumber(Number(filter.currentPage))?.index?.toString(),
                         currentAya: getAyaByPageNumber(Number(filter.currentPage)).startAyaNumber.toString()
                     }
                     break
