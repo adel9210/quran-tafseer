@@ -1,13 +1,13 @@
 import axios from "axios";
-import {Sura} from "../types";
 import List from '../mock/quran-sura.json'
 import Quarters from '../mock/quran-hazb-quarter.json'
 import Pages from '../mock/quran-pages.json'
 import Goz2Items from '../mock/quran-goz2.json'
+import {Aya, AyaTafseer} from "../quranData";
 
 export const axiosInstance = axios.create({
-    baseURL: '/mock',
-    timeout: 1000,
+    baseURL: 'https://al-th3labe.omgsys.com/json/',
+    timeout: 0,
     headers: {'X-Custom-Header': 'foobar'}
 });
 
@@ -16,8 +16,8 @@ export const getSuraList = (): typeof List => {
 }
 
 export const getSuraDetails = async (suraIndex: number) => {
-    const response = await axiosInstance.get<Sura[]>('/quran-sura.json')
-    return response.data.filter(sura => sura.index === suraIndex)[0]
+    const response = getSuraList()
+    return response.filter(sura => sura.index === suraIndex)[0]
 }
 
 export const getSuraQuarter = (suraNumber: number): string => {
@@ -53,4 +53,15 @@ export const getQuarterDetail = (quarterIndex: number): typeof Quarters => {
 
 export const getGoz2Details = (goz2Number: number): typeof Goz2Items => {
     return Goz2Items.filter(page => page.goz2Number === goz2Number)
+}
+
+
+export const getPageTafseer = async (language:string, pageNumber: number) => {
+    const response = await axiosInstance.get<AyaTafseer[]>(`TafseerPages/${language}/${pageNumber}.json`)
+    return response.data
+}
+
+export const getPageHighlighters = async (pageNumber: number) => {
+    const response = await axiosInstance.get<Aya[]>(`highlighterPages/${pageNumber}.json`)
+    return response.data
 }

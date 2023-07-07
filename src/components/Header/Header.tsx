@@ -19,11 +19,17 @@ const options = [
 ]
 
 const tafseerOptions = [
+    {value: 'th3labe', label: 'الثعلبي'},
     {value: 'option 1', label: 'السعدي'},
     {value: 'option 2', label: 'البغوي'},
     {value: 'option 3', label: 'ابن كثير'},
     {value: 'option 4', label: 'القرطبي'},
     {value: 'option 5', label: 'الطبري'},
+]
+
+const tafseerLanguage = [
+    {value: 'ar', label: 'عربي التفسير الميسر'},
+    {value: 'en', label: 'English - Sahih International'},
 ]
 
 const sheikhOptions = [
@@ -94,7 +100,8 @@ export const Header = () => {
                             </div>
                             <div className='header__pair__item__control'>
                                 <label className='header__pair__item__control__label'>التفسير</label>
-                                <Select styles={style} options={tafseerOptions} placeholder='إختر'/>
+                                <Select isDisabled={true} styles={style} options={tafseerOptions}
+                                        placeholder='الثعلبي'/>
                             </div>
                         </div>
                         <div className='header__pair__item'>
@@ -139,8 +146,16 @@ export const Header = () => {
                                     placeholder='إختر'/>
                             </div>
                             <div className='header__pair__item__control'>
-                                <label className='header__pair__item__control__label'>إعدادات التكرار</label>
-                                <Select styles={style} options={options} placeholder='إختر'/>
+                                <label className='header__pair__item__control__label'>لغة التفسير</label>
+                                <Select styles={style}
+                                        options={tafseerLanguage}
+                                        onChange={(item) => {
+                                            dispatch(setFilter({
+                                                key: 'tafseerLang',
+                                                value: item?.value || ''
+                                            }))
+                                        }}
+                                        placeholder='إختر'/>
                             </div>
                         </div>
                         <div className='header__pair__item header__pair__item__control'>

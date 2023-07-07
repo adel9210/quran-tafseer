@@ -25,7 +25,8 @@ export interface QuranSliceType {
         currentAya?: string,
         currentGoz2?: string,
         currentQuarter?: string,
-        currentSheikh?: string
+        currentSheikh?: string,
+        tafseerLang?: 'ar' | 'en'
     }
 }
 
@@ -36,7 +37,8 @@ const initialState: Partial<QuranSliceType> = {
         currentPage: '1',
         currentGoz2: '1',
         currentQuarter: '1',
-        currentSheikh: 'Husary_64kbps'
+        currentSheikh: 'Husary_64kbps',
+        tafseerLang: 'ar'
     }
 }
 
