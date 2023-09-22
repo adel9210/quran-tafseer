@@ -1,7 +1,7 @@
 import './Highlighter.scss'
 import {useDispatch, useSelector} from "react-redux";
 import {RootState} from "../../../../redux/store";
-import {changeHighlighterActiveId, changeHighlighterHoverId} from "../../../../redux/quran.slice";
+import {changeHighlighterActiveId, changeHighlighterHoverId, setFilter} from "../../../../redux/quran.slice";
 
 interface Props {
     top: number,
@@ -36,6 +36,7 @@ export const Highlighter = (props: Props) => {
 
     const onClick = () => {
         dispatch(changeHighlighterActiveId(getHighlighterId()))
+        dispatch(setFilter({ key: 'currentAya', value:ayaNumber.toString()}))
         const element = document.getElementById(highlighterId)
         scrollToElement(element)
     }

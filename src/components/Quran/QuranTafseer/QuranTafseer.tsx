@@ -10,7 +10,6 @@ export const QuranTafseer = forwardRef((props, ref: ForwardedRef<HTMLDivElement>
     const {filter} = useSelector(getTafseerState)
     const [tafseerPageText, setTafseerPageText] = useState<AyaTafseer[]>()
 
-    console.log(filter)
 
     useEffect(() => {
         (async () => {

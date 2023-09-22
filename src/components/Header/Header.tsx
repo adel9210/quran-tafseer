@@ -56,12 +56,14 @@ export const Header = () => {
     const dispatch = useDispatch()
     const {filter} = useSelector(getTafseerState)
     const [selectedSura, setSelectedSura] = useState<Sura>()
+    const [shouldPlay, setShouldPlay] = useState(false);
 
     const getCurrentLink = useCallback(() => {
         const sura = Number(filter?.currentSura).toLocaleString('en-US', {minimumIntegerDigits: 3, useGrouping: false})
         const aya = Number(filter?.currentAya).toLocaleString('en-US', {minimumIntegerDigits: 3, useGrouping: false})
-        const sheikh = filter?.currentSheikh
+        const sheikh = filter?.currentSheikh;
 
+        console.log(`https://quran.ksu.edu.sa/ayat/mp3/${sheikh}/${sura}${aya}.mp3`)
         return `https://quran.ksu.edu.sa/ayat/mp3/${sheikh}/${sura}${aya}.mp3`
     }, [filter])
 
@@ -163,8 +165,9 @@ export const Header = () => {
                                 style={{direction: 'ltr'}}
                                 autoPlay={false}
                                 src={getCurrentLink()}
-                                onPlay={e => console.log("onPlay")}
-                                autoPlayAfterSrcChange={true}
+                                onPlay={e => setShouldPlay(true)}
+                                onPause={e => setShouldPlay(false)}
+                                autoPlayAfterSrcChange={shouldPlay}
                                 onEnded={goToNextAya}
                                 // other props here
                             />
