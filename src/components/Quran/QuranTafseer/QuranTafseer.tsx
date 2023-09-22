@@ -14,7 +14,6 @@ export const QuranTafseer = forwardRef((props, ref: ForwardedRef<HTMLDivElement>
 
     useEffect(() => {
         (async () => {
-            debugger
             const response = await getPageTafseer(filter?.tafseerLang || 'ar', Number(filter?.currentPage))
             setTafseerPageText(response)
         })()

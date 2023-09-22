@@ -7,19 +7,21 @@ interface Props {
     top: number,
     left: number,
     width: number,
+    height: number,
     ayaNumber: number,
     highlighterId: string,
 }
 
 export const Highlighter = (props: Props) => {
-    const {top, width, left, ayaNumber, highlighterId} = props
+    const {top, width, left,height = 30, ayaNumber, highlighterId} = props
     const {highlighterActiveId, highlighterHoverId} = useSelector((state: RootState) => state.quran)
     const dispatch = useDispatch()
 
     const style = {
-        width: width,
-        top: top,
-        left: left
+        width,
+        top,
+        left,
+        height
     }
 
     const onMouseOver = () => {
@@ -43,7 +45,7 @@ export const Highlighter = (props: Props) => {
     }
 
     const scrollToElement = (elementRef: any) => {
-        elementRef.scrollIntoView();
+        // elementRef.scrollIntoView();
     }
 
 

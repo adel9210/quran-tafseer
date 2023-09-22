@@ -1,14 +1,20 @@
 .quran-page {
-  padding: 5px 10px;
+  //padding: 5px 10px;
   position: relative;
-  flex: 1;
+  //flex: 1;
+  height: 690px;
+  width: 475px;
 
 
   &__img {
-    width: 100%;
+    width: 456px
   }
 }
 
+  .page-content {
+    width: 475px;
+    height: 690px;
+  }
 //
 //.github-block {
 //  display: flex;

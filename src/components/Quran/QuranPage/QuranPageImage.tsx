@@ -20,16 +20,17 @@ export const QuranPageImage = (props: Props) => {
     }, [filter])
 
     return <>
-        <img className='quran-page__img' src={require(`../../../assets/images/pages/${props?.pageNumber}.png`)}
+        <img className='quran-page__img' src={`https://al-th3labe.omgsys.com/quranImages/${props?.pageNumber}.png`}
              alt={props.pageNumber}/>
         {
             pageHighlighters?.map(({highlighterId, ayaNumber, styles}, index) => {
-                const [width, top, left] = styles
+                const [width, top, left, height] = styles
                 return <Highlighter
                     key={ayaNumber + index}
                     top={top}
                     left={left}
                     width={width}
+                    height={height}
                     ayaNumber={ayaNumber}
                     highlighterId={highlighterId}/>
             })
