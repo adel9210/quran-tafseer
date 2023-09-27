@@ -15,7 +15,7 @@ export const getSuraList = (): typeof List => {
     return List
 }
 
-export const getSuraDetails = async (suraIndex: number) => {
+export const getSuraDetails = (suraIndex: number) => {
     const response = getSuraList()
     return response.filter(sura => sura.index === suraIndex)[0]
 }

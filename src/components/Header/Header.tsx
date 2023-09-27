@@ -5,18 +5,12 @@ import 'react-h5-audio-player/lib/styles.css';
 import 'react-h5-audio-player/src/styles.scss'
 import {SelectModal} from "../ui-components/SelectModal/SelectModal";
 import {useDispatch, useSelector} from "react-redux";
-import {setActiveModal, setFilter} from "../../redux/quran.slice";
+import {changeHighlighterActiveId, setActiveModal, setFilter, setSuraInfo} from "../../redux/quran.slice";
 import {getTafseerState} from "../../redux/selectors";
 import {useCallback, useEffect, useRef, useState} from "react";
 import {Col, Container, Row} from "react-bootstrap";
-import {getSuraDetails} from "../../services/client.service";
+import {getSuraDetails, getSuraList} from "../../services/client.service";
 import {ModalTypes, Sura} from "../../types";
-
-const options = [
-    {value: 'option 1', label: 'الخيار رقم 5'},
-    {value: 'option 2', label: 'الخيار رقم 5'},
-    {value: 'option 3', label: 'الخيار رقم 5'}
-]
 
 const tafseerOptions = [
     {value: 'th3labe', label: 'الثعلبي'},
@@ -57,15 +51,16 @@ export const Header = () => {
     const {filter} = useSelector(getTafseerState)
     const [selectedSura, setSelectedSura] = useState<Sura>()
     const [shouldPlay, setShouldPlay] = useState(false);
-    const [isStop, setIsStop] = useState(false);
     const playerRef = useRef<any>();
+
+    console.log('STATE IS', filter)
 
     const getCurrentLink = useCallback(() => {
         const sura = Number(filter?.currentSura).toLocaleString('en-US', {minimumIntegerDigits: 3, useGrouping: false})
         const aya = Number(filter?.currentAya).toLocaleString('en-US', {minimumIntegerDigits: 3, useGrouping: false})
         const sheikh = filter?.currentSheikh;
 
-        console.log(`https://quran.ksu.edu.sa/ayat/mp3/${sheikh}/${sura}${aya}.mp3`)
+        setHighlighterId()
         return `https://quran.ksu.edu.sa/ayat/mp3/${sheikh}/${sura}${aya}.mp3`
     }, [filter])
 
@@ -73,20 +68,43 @@ export const Header = () => {
         dispatch(setActiveModal({[type]: true}))
     }
 
+    const getHighlighterIdConcatWithSuraAndAya = () => {
+        return `${filter?.currentSura}_${filter?.currentAya}`
+    }
+
+
     const goToNextAya = () => {
-        dispatch(setFilter({
-            key: 'currentAya',
-            value: (Number(filter?.currentAya) + 1).toString()
-        }))
+        if (ifLastAyaInSurah(filter?.currentAya)) {
+            const nextSuraIndex = Number(filter?.currentSura) + 1
+            dispatch(setSuraInfo(getSuraDetails(nextSuraIndex)))
+            dispatch(setFilter({
+                key: 'currentSura',
+                value: nextSuraIndex.toString()
+            }))
+        } else {
+            dispatch(setFilter({
+                key: 'currentAya',
+                value: (Number(filter?.currentAya) + 1).toString()
+            }))
+        }
+    }
+
+    const ifLastAyaInSurah = (aya?: string) => {
+        const currentSurah = getSuraDetails(Number(filter?.currentSura))
+        return Number(aya) === currentSurah.ayaCount;
+    }
+
+
+    const setHighlighterId = () => {
+        dispatch(changeHighlighterActiveId(getHighlighterIdConcatWithSuraAndAya()))
     }
 
     useEffect(() => {
-        (async () => {
-            if (filter?.currentSura) {
-                const response = await getSuraDetails(Number(filter.currentSura))
-                setSelectedSura(response)
-            }
-        })()
+        if (filter?.currentSura) {
+            const response = getSuraDetails(Number(filter.currentSura))
+            setSelectedSura(response)
+        }
+
     }, [filter])
 
     return <div className='header'>
@@ -165,8 +183,7 @@ export const Header = () => {
                         <div className='header__pair__item header__pair__item__control'>
                             <AudioPlayer
                                 ref={playerRef}
-                                customAdditionalControls={[<CustomStopButton onClick={()=> {
-                                    setIsStop(true)
+                                customAdditionalControls={[<CustomStopButton onClick={() => {
                                     setShouldPlay(false)
                                     playerRef.current.audio.current.pause()
                                 }}/>]}
@@ -175,7 +192,6 @@ export const Header = () => {
                                 src={getCurrentLink()}
                                 onPlay={e => {
                                     setShouldPlay(true)
-                                    setIsStop(false)
                                 }}
                                 // onPause={e => setShouldPlay(false)}
                                 autoPlayAfterSrcChange={shouldPlay}
@@ -191,8 +207,9 @@ export const Header = () => {
 }
 
 
-const CustomStopButton = (props: {onClick: ()=>void}) => {
-    return <button onClick={props.onClick} aria-label="Stop" className="rhap_button-clear rhap_main-controls-button rhap_play-pause-button"
+const CustomStopButton = (props: { onClick: () => void }) => {
+    return <button onClick={props.onClick} aria-label="Stop"
+                   className="rhap_button-clear rhap_main-controls-button rhap_play-pause-button"
                    type="button">
         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>

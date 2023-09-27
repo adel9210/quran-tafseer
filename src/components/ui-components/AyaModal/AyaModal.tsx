@@ -16,7 +16,7 @@ export const AyaModal = () => {
 
     useEffect(() => {
         (async () => {
-            const response = await getSuraDetails(Number(filter?.currentSura))
+            const response = getSuraDetails(Number(filter?.currentSura))
             setSura(response)
         })()
     }, [])
