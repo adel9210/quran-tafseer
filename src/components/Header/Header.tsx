@@ -7,7 +7,7 @@ import {SelectModal} from "../ui-components/SelectModal/SelectModal";
 import {useDispatch, useSelector} from "react-redux";
 import {setActiveModal, setFilter} from "../../redux/quran.slice";
 import {getTafseerState} from "../../redux/selectors";
-import {useCallback, useEffect, useState} from "react";
+import {useCallback, useEffect, useRef, useState} from "react";
 import {Col, Container, Row} from "react-bootstrap";
 import {getSuraDetails} from "../../services/client.service";
 import {ModalTypes, Sura} from "../../types";
@@ -57,6 +57,8 @@ export const Header = () => {
     const {filter} = useSelector(getTafseerState)
     const [selectedSura, setSelectedSura] = useState<Sura>()
     const [shouldPlay, setShouldPlay] = useState(false);
+    const [isStop, setIsStop] = useState(false);
+    const playerRef = useRef<any>();
 
     const getCurrentLink = useCallback(() => {
         const sura = Number(filter?.currentSura).toLocaleString('en-US', {minimumIntegerDigits: 3, useGrouping: false})
@@ -162,11 +164,20 @@ export const Header = () => {
                         </div>
                         <div className='header__pair__item header__pair__item__control'>
                             <AudioPlayer
+                                ref={playerRef}
+                                customAdditionalControls={[<CustomStopButton onClick={()=> {
+                                    setIsStop(true)
+                                    setShouldPlay(false)
+                                    playerRef.current.audio.current.pause()
+                                }}/>]}
                                 style={{direction: 'ltr'}}
                                 autoPlay={false}
                                 src={getCurrentLink()}
-                                onPlay={e => setShouldPlay(true)}
-                                onPause={e => setShouldPlay(false)}
+                                onPlay={e => {
+                                    setShouldPlay(true)
+                                    setIsStop(false)
+                                }}
+                                // onPause={e => setShouldPlay(false)}
                                 autoPlayAfterSrcChange={shouldPlay}
                                 onEnded={goToNextAya}
                                 // other props here
@@ -179,3 +190,19 @@ export const Header = () => {
     </div>
 }
 
+
+const CustomStopButton = (props: {onClick: ()=>void}) => {
+    return <button onClick={props.onClick} aria-label="Stop" className="rhap_button-clear rhap_main-controls-button rhap_play-pause-button"
+                   type="button">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+                <path d="M15 9H9V15H15V9Z" fill="#868686"></path>
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12ZM21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+                      fill="#868686"></path>
+            </g>
+        </svg>
+    </button>
+}
