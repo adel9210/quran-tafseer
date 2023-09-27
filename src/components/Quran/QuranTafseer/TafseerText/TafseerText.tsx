@@ -14,9 +14,11 @@ export const TafseerText = (props: Props) => {
     const {highlighterActiveId, highlighterHoverId} = useSelector((state: RootState) => state.quran)
     const {filter} = useSelector(getTafseerState)
 
+    console.log('highlighterId', highlighterActiveId)
+
     return <div
         style={{direction: filter?.tafseerLang === 'en' ? 'ltr' : 'rtl'}}
-        className={`tafseer-text ${highlighterActiveId === ayaNumber ? 'active' : ''} ${highlighterHoverId === ayaNumber ? 'hover' : ''}`}
+        className={`tafseer-text ${highlighterActiveId === highlighterId ? 'active' : ''} ${highlighterHoverId === highlighterId ? 'hover' : ''}`}
         id={`tafseer_${highlighterId}`}>
         <h3 style={{
             marginInlineStart: filter?.tafseerLang === 'en' ? '0' : '10px',

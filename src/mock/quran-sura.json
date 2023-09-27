@@ -66,8 +66,8 @@
     "frankName": "Al-A'raaf",
     "ayaCount": 206,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 151,
+    "pageEnd": 176
   },
   {
     "index": 8,
@@ -76,8 +76,8 @@
     "frankName": "Al-Anfaal",
     "ayaCount": 75,
     "suraType": "Medinan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 177,
+    "pageEnd": 186
   },
   {
     "index": 9,
@@ -86,8 +86,8 @@
     "frankName": "At-Tawba",
     "ayaCount": 129,
     "suraType": "Medinan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 187,
+    "pageEnd": 207
   },
   {
     "index": 10,
@@ -96,8 +96,8 @@
     "frankName": "Yunus",
     "ayaCount": 109,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 208,
+    "pageEnd": 221
   },
   {
     "index": 11,
@@ -106,8 +106,8 @@
     "frankName": "Hud",
     "ayaCount": 123,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 221,
+    "pageEnd": 235
   },
   {
     "index": 12,
@@ -116,8 +116,8 @@
     "frankName": "Yusuf",
     "ayaCount": 111,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 235,
+    "pageEnd": 248
   },
   {
     "index": 13,
@@ -126,8 +126,8 @@
     "frankName": "Ar-Ra'd",
     "ayaCount": 43,
     "suraType": "Medinan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 249,
+    "pageEnd": 255
   },
   {
     "index": 14,
@@ -136,8 +136,8 @@
     "frankName": "Ibrahim",
     "ayaCount": 52,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 255,
+    "pageEnd": 261
   },
   {
     "index": 15,
@@ -146,8 +146,8 @@
     "frankName": "Al-Hijr",
     "ayaCount": 99,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 262,
+    "pageEnd": 267
   },
   {
     "index": 16,
@@ -156,8 +156,8 @@
     "frankName": "An-Nahl",
     "ayaCount": 128,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 267,
+    "pageEnd": 281
   },
   {
     "index": 17,
@@ -166,8 +166,8 @@
     "frankName": "Al-Israa",
     "ayaCount": 111,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 282,
+    "pageEnd": 293
   },
   {
     "index": 18,
@@ -176,8 +176,8 @@
     "frankName": "Al-Kahf",
     "ayaCount": 110,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 293,
+    "pageEnd": 304
   },
   {
     "index": 19,
@@ -186,8 +186,8 @@
     "frankName": "Maryam",
     "ayaCount": 98,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 305,
+    "pageEnd": 312
   },
   {
     "index": 20,
@@ -196,8 +196,8 @@
     "frankName": "Taa-Haa",
     "ayaCount": 135,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 312,
+    "pageEnd": 321
   },
   {
     "index": 21,
@@ -206,8 +206,8 @@
     "frankName": "Al-Anbiyaa",
     "ayaCount": 112,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 322,
+    "pageEnd": 331
   },
   {
     "index": 22,
@@ -216,8 +216,8 @@
     "frankName": "Al-Hajj",
     "ayaCount": 78,
     "suraType": "Medinan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 332,
+    "pageEnd": 341
   },
   {
     "index": 23,
@@ -226,8 +226,8 @@
     "frankName": "Al-Muminoon",
     "ayaCount": 118,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 342,
+    "pageEnd": 349
   },
   {
     "index": 24,
@@ -236,8 +236,8 @@
     "frankName": "An-Noor",
     "ayaCount": 64,
     "suraType": "Medinan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 350,
+    "pageEnd": 359
   },
   {
     "index": 25,
@@ -246,8 +246,8 @@
     "frankName": "Al-Furqaan",
     "ayaCount": 77,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 359,
+    "pageEnd": 366
   },
   {
     "index": 26,
@@ -256,8 +256,8 @@
     "frankName": "Ash-Shu'araa",
     "ayaCount": 227,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 367,
+    "pageEnd": 376
   },
   {
     "index": 27,
@@ -266,8 +266,8 @@
     "frankName": "An-Naml",
     "ayaCount": 93,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 377,
+    "pageEnd": 385
   },
   {
     "index": 28,
@@ -276,8 +276,8 @@
     "frankName": "Al-Qasas",
     "ayaCount": 88,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 385,
+    "pageEnd": 396
   },
   {
     "index": 29,
@@ -286,8 +286,8 @@
     "frankName": "Al-Ankaboot",
     "ayaCount": 69,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 396,
+    "pageEnd": 404
   },
   {
     "index": 30,
@@ -296,8 +296,8 @@
     "frankName": "Ar-Room",
     "ayaCount": 60,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 404,
+    "pageEnd": 410
   },
   {
     "index": 31,
@@ -306,8 +306,8 @@
     "frankName": "Luqman",
     "ayaCount": 34,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 411,
+    "pageEnd": 414
   },
   {
     "index": 32,
@@ -316,8 +316,8 @@
     "frankName": "As-Sajda",
     "ayaCount": 30,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 415,
+    "pageEnd": 417
   },
   {
     "index": 33,
@@ -326,8 +326,8 @@
     "frankName": "Al-Ahzaab",
     "ayaCount": 73,
     "suraType": "Medinan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 418,
+    "pageEnd": 427
   },
   {
     "index": 34,
@@ -336,8 +336,8 @@
     "frankName": "Saba",
     "ayaCount": 54,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 428,
+    "pageEnd": 434
   },
   {
     "index": 35,
@@ -346,8 +346,8 @@
     "frankName": "Faatir",
     "ayaCount": 45,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 434,
+    "pageEnd": 440
   },
   {
     "index": 36,
@@ -356,8 +356,8 @@
     "frankName": "Yaseen",
     "ayaCount": 83,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 440,
+    "pageEnd": 445
   },
   {
     "index": 37,
@@ -366,8 +366,8 @@
     "frankName": "As-Saaffaat",
     "ayaCount": 182,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 446,
+    "pageEnd": 452
   },
   {
     "index": 38,
@@ -376,8 +376,8 @@
     "frankName": "Saad",
     "ayaCount": 88,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 453,
+    "pageEnd": 458
   },
   {
     "index": 39,
@@ -386,8 +386,8 @@
     "frankName": "Az-Zumar",
     "ayaCount": 75,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 458,
+    "pageEnd": 467
   },
   {
     "index": 40,
@@ -396,8 +396,8 @@
     "frankName": "Ghafir",
     "ayaCount": 85,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 467,
+    "pageEnd": 476
   },
   {
     "index": 41,
@@ -406,8 +406,8 @@
     "frankName": "Fussilat",
     "ayaCount": 54,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 474,
+    "pageEnd": 482
   },
   {
     "index": 42,
@@ -416,8 +416,8 @@
     "frankName": "Ash-Shura",
     "ayaCount": 53,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 483,
+    "pageEnd": 489
   },
   {
     "index": 43,
@@ -426,8 +426,8 @@
     "frankName": "Az-Zukhruf",
     "ayaCount": 89,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 489,
+    "pageEnd": 495
   },
   {
     "index": 44,
@@ -436,8 +436,8 @@
     "frankName": "Ad-Dukhaan",
     "ayaCount": 59,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 496,
+    "pageEnd": 498
   },
   {
     "index": 45,
@@ -446,8 +446,8 @@
     "frankName": "Al-Jaathiya",
     "ayaCount": 37,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 499,
+    "pageEnd": 502
   },
   {
     "index": 46,
@@ -456,8 +456,8 @@
     "frankName": "Al-Ahqaf",
     "ayaCount": 35,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 502,
+    "pageEnd": 506
   },
   {
     "index": 47,
@@ -466,8 +466,8 @@
     "frankName": "Muhammad",
     "ayaCount": 38,
     "suraType": "Medinan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 507,
+    "pageEnd": 510
   },
   {
     "index": 48,
@@ -476,8 +476,8 @@
     "frankName": "Al-Fath",
     "ayaCount": 29,
     "suraType": "Medinan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 511,
+    "pageEnd": 515
   },
   {
     "index": 49,
@@ -486,8 +486,8 @@
     "frankName": "Al-Hujuraat",
     "ayaCount": 18,
     "suraType": "Medinan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 515,
+    "pageEnd": 517
   },
   {
     "index": 50,
@@ -496,8 +496,8 @@
     "frankName": "Qaaf",
     "ayaCount": 45,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 518,
+    "pageEnd": 520
   },
   {
     "index": 51,
@@ -506,8 +506,8 @@
     "frankName": "Adh-Dhaariyat",
     "ayaCount": 60,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 520,
+    "pageEnd": 523
   },
   {
     "index": 52,
@@ -516,8 +516,8 @@
     "frankName": "At-Tur",
     "ayaCount": 49,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 523,
+    "pageEnd": 525
   },
   {
     "index": 53,
@@ -526,8 +526,8 @@
     "frankName": "An-Najm",
     "ayaCount": 62,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 526,
+    "pageEnd": 528
   },
   {
     "index": 54,
@@ -536,8 +536,8 @@
     "frankName": "Al-Qamar",
     "ayaCount": 55,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 528,
+    "pageEnd": 531
   },
   {
     "index": 55,
@@ -546,8 +546,8 @@
     "frankName": "Ar-Rahmaan",
     "ayaCount": 78,
     "suraType": "Medinan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 531,
+    "pageEnd": 534
   },
   {
     "index": 56,
@@ -556,8 +556,8 @@
     "frankName": "Al-Waaqia",
     "ayaCount": 96,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 534,
+    "pageEnd": 537
   },
   {
     "index": 57,
@@ -566,8 +566,8 @@
     "frankName": "Al-Hadid",
     "ayaCount": 29,
     "suraType": "Medinan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 537,
+    "pageEnd": 541
   },
   {
     "index": 58,
@@ -576,8 +576,8 @@
     "frankName": "Al-Mujaadila",
     "ayaCount": 22,
     "suraType": "Medinan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 542,
+    "pageEnd": 545
   },
   {
     "index": 59,
@@ -586,8 +586,8 @@
     "frankName": "Al-Hashr",
     "ayaCount": 24,
     "suraType": "Medinan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 545,
+    "pageEnd": 548
   },
   {
     "index": 60,
@@ -596,8 +596,8 @@
     "frankName": "Al-Mumtahana",
     "ayaCount": 13,
     "suraType": "Medinan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 549,
+    "pageEnd": 551
   },
   {
     "index": 61,
@@ -606,8 +606,8 @@
     "frankName": "As-Saff",
     "ayaCount": 14,
     "suraType": "Medinan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 551,
+    "pageEnd": 552
   },
   {
     "index": 62,
@@ -616,8 +616,8 @@
     "frankName": "Al-Jumu'a",
     "ayaCount": 11,
     "suraType": "Medinan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 553,
+    "pageEnd": 554
   },
   {
     "index": 63,
@@ -626,8 +626,8 @@
     "frankName": "Al-Munaafiqoon",
     "ayaCount": 11,
     "suraType": "Medinan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 554,
+    "pageEnd": 555
   },
   {
     "index": 64,
@@ -636,8 +636,8 @@
     "frankName": "At-Taghaabun",
     "ayaCount": 18,
     "suraType": "Medinan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 556,
+    "pageEnd": 557
   },
   {
     "index": 65,
@@ -646,8 +646,8 @@
     "frankName": "At-Talaaq",
     "ayaCount": 12,
     "suraType": "Medinan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 558,
+    "pageEnd": 559
   },
   {
     "index": 66,
@@ -656,8 +656,8 @@
     "frankName": "At-Tahrim",
     "ayaCount": 12,
     "suraType": "Medinan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 560,
+    "pageEnd": 561
   },
   {
     "index": 67,
@@ -666,8 +666,8 @@
     "frankName": "Al-Mulk",
     "ayaCount": 30,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 562,
+    "pageEnd": 564
   },
   {
     "index": 68,
@@ -676,8 +676,8 @@
     "frankName": "Al-Qalam",
     "ayaCount": 52,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 564,
+    "pageEnd": 566
   },
   {
     "index": 69,
@@ -686,8 +686,8 @@
     "frankName": "Al-Haaqqa",
     "ayaCount": 52,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 566,
+    "pageEnd": 568
   },
   {
     "index": 70,
@@ -696,8 +696,8 @@
     "frankName": "Al-Ma'aarij",
     "ayaCount": 44,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 568,
+    "pageEnd": 570
   },
   {
     "index": 71,
@@ -706,8 +706,8 @@
     "frankName": "Nooh",
     "ayaCount": 28,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 570,
+    "pageEnd": 571
   },
   {
     "index": 72,
@@ -716,8 +716,8 @@
     "frankName": "Al-Jinn",
     "ayaCount": 28,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 572,
+    "pageEnd": 573
   },
   {
     "index": 73,
@@ -726,8 +726,8 @@
     "frankName": "Al-Muzzammil",
     "ayaCount": 20,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 574,
+    "pageEnd": 575
   },
   {
     "index": 74,
@@ -736,8 +736,8 @@
     "frankName": "Al-Muddaththir",
     "ayaCount": 56,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 575,
+    "pageEnd": 577
   },
   {
     "index": 75,
@@ -746,8 +746,8 @@
     "frankName": "Al-Qiyaama",
     "ayaCount": 40,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 577,
+    "pageEnd": 578
   },
   {
     "index": 76,
@@ -756,8 +756,8 @@
     "frankName": "Al-Insaan",
     "ayaCount": 31,
     "suraType": "Medinan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 578,
+    "pageEnd": 580
   },
   {
     "index": 77,
@@ -766,8 +766,8 @@
     "frankName": "Al-Mursalaat",
     "ayaCount": 50,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 580,
+    "pageEnd": 581
   },
   {
     "index": 78,
@@ -776,8 +776,8 @@
     "frankName": "An-Naba",
     "ayaCount": 40,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 582,
+    "pageEnd": 583
   },
   {
     "index": 79,
@@ -786,8 +786,8 @@
     "frankName": "An-Naazi'aat",
     "ayaCount": 46,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 583,
+    "pageEnd": 584
   },
   {
     "index": 80,
@@ -796,8 +796,8 @@
     "frankName": "Abasa",
     "ayaCount": 42,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 585,
+    "pageEnd": 586
   },
   {
     "index": 81,
@@ -806,8 +806,8 @@
     "frankName": "At-Takwir",
     "ayaCount": 29,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 586,
+    "pageEnd": 586
   },
   {
     "index": 82,
@@ -816,8 +816,8 @@
     "frankName": "Al-Infitaar",
     "ayaCount": 19,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 587,
+    "pageEnd": 587
   },
   {
     "index": 83,
@@ -826,8 +826,8 @@
     "frankName": "Al-Mutaffifin",
     "ayaCount": 36,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 587,
+    "pageEnd": 589
   },
   {
     "index": 84,
@@ -836,8 +836,8 @@
     "frankName": "Al-Inshiqaaq",
     "ayaCount": 25,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 589,
+    "pageEnd": 590
   },
   {
     "index": 85,
@@ -846,8 +846,8 @@
     "frankName": "Al-Burooj",
     "ayaCount": 22,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 590,
+    "pageEnd": 590
   },
   {
     "index": 86,
@@ -856,8 +856,8 @@
     "frankName": "At-Taariq",
     "ayaCount": 17,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 591,
+    "pageEnd": 591
   },
   {
     "index": 87,
@@ -866,8 +866,8 @@
     "frankName": "Al-A'laa",
     "ayaCount": 19,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 591,
+    "pageEnd": 592
   },
   {
     "index": 88,
@@ -876,8 +876,8 @@
     "frankName": "Al-Ghaashiya",
     "ayaCount": 26,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 592,
+    "pageEnd": 593
   },
   {
     "index": 89,
@@ -886,8 +886,8 @@
     "frankName": "Al-Fajr",
     "ayaCount": 30,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 593,
+    "pageEnd": 594
   },
   {
     "index": 90,
@@ -896,8 +896,8 @@
     "frankName": "Al-Balad",
     "ayaCount": 20,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 594,
+    "pageEnd": 595
   },
   {
     "index": 91,
@@ -906,8 +906,8 @@
     "frankName": "Ash-Shams",
     "ayaCount": 15,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 595,
+    "pageEnd": 595
   },
   {
     "index": 92,
@@ -916,8 +916,8 @@
     "frankName": "Al-Lail",
     "ayaCount": 21,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 595,
+    "pageEnd": 596
   },
   {
     "index": 93,
@@ -926,8 +926,8 @@
     "frankName": "Ad-Dhuhaa",
     "ayaCount": 11,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 596,
+    "pageEnd": 596
   },
   {
     "index": 94,
@@ -936,8 +936,8 @@
     "frankName": "Ash-Sharh",
     "ayaCount": 8,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 596,
+    "pageEnd": 597
   },
   {
     "index": 95,
@@ -946,8 +946,8 @@
     "frankName": "At-Tin",
     "ayaCount": 8,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 597,
+    "pageEnd": 597
   },
   {
     "index": 96,
@@ -956,8 +956,8 @@
     "frankName": "Al-Alaq",
     "ayaCount": 19,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 597,
+    "pageEnd": 598
   },
   {
     "index": 97,
@@ -966,8 +966,8 @@
     "frankName": "Al-Qadr",
     "ayaCount": 5,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 598,
+    "pageEnd": 598
   },
   {
     "index": 98,
@@ -976,8 +976,8 @@
     "frankName": "Al-Bayyina",
     "ayaCount": 8,
     "suraType": "Medinan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 598,
+    "pageEnd": 599
   },
   {
     "index": 99,
@@ -986,8 +986,8 @@
     "frankName": "Az-Zalzala",
     "ayaCount": 8,
     "suraType": "Medinan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 599,
+    "pageEnd": 599
   },
   {
     "index": 100,
@@ -996,8 +996,8 @@
     "frankName": "Al-Aadiyaat",
     "ayaCount": 11,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 599,
+    "pageEnd": 600
   },
   {
     "index": 101,
@@ -1006,8 +1006,8 @@
     "frankName": "Al-Qaari'a",
     "ayaCount": 11,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 600,
+    "pageEnd": 600
   },
   {
     "index": 102,
@@ -1016,8 +1016,8 @@
     "frankName": "At-Takaathur",
     "ayaCount": 8,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 600,
+    "pageEnd": 600
   },
   {
     "index": 103,
@@ -1026,8 +1026,8 @@
     "frankName": "Al-Asr",
     "ayaCount": 3,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 601,
+    "pageEnd": 601
   },
   {
     "index": 104,
@@ -1036,8 +1036,8 @@
     "frankName": "Al-Humaza",
     "ayaCount": 9,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 601,
+    "pageEnd": 601
   },
   {
     "index": 105,
@@ -1046,8 +1046,8 @@
     "frankName": "Al-Fil",
     "ayaCount": 5,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 601,
+    "pageEnd": 601
   },
   {
     "index": 106,
@@ -1056,8 +1056,8 @@
     "frankName": "Quraish",
     "ayaCount": 4,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 602,
+    "pageEnd": 602
   },
   {
     "index": 107,
@@ -1066,8 +1066,8 @@
     "frankName": "Al-Maa'un",
     "ayaCount": 7,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 602,
+    "pageEnd": 602
   },
   {
     "index": 108,
@@ -1076,8 +1076,8 @@
     "frankName": "Al-Kawthar",
     "ayaCount": 3,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 602,
+    "pageEnd": 602
   },
   {
     "index": 109,
@@ -1086,8 +1086,8 @@
     "frankName": "Al-Kaafiroon",
     "ayaCount": 6,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 603,
+    "pageEnd": 603
   },
   {
     "index": 110,
@@ -1096,8 +1096,8 @@
     "frankName": "An-Nasr",
     "ayaCount": 3,
     "suraType": "Medinan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 603,
+    "pageEnd": 603
   },
   {
     "index": 111,
@@ -1106,8 +1106,8 @@
     "frankName": "Al-Masad",
     "ayaCount": 5,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 603,
+    "pageEnd": 603
   },
   {
     "index": 112,
@@ -1116,8 +1116,8 @@
     "frankName": "Al-Ikhlaas",
     "ayaCount": 4,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 604,
+    "pageEnd": 604
   },
   {
     "index": 113,
@@ -1126,8 +1126,8 @@
     "frankName": "Al-Falaq",
     "ayaCount": 5,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 604,
+    "pageEnd": 604
   },
   {
     "index": 114,
@@ -1136,7 +1136,7 @@
     "frankName": "An-Naas",
     "ayaCount": 6,
     "suraType": "Meccan",
-    "pageStart": 1,
-    "pageEnd": 1
+    "pageStart": 604,
+    "pageEnd": 604
   }
 ]

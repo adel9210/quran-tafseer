@@ -9,11 +9,12 @@ interface Props {
     width: number,
     height: number,
     ayaNumber: number,
+    surahNumber: number,
     highlighterId: string,
 }
 
 export const Highlighter = (props: Props) => {
-    const {top, width, left,height = 30, ayaNumber, highlighterId} = props
+    const {top, width, left, height = 30, ayaNumber, highlighterId, surahNumber} = props
     const {highlighterActiveId, highlighterHoverId} = useSelector((state: RootState) => state.quran)
     const dispatch = useDispatch()
 
@@ -25,9 +26,11 @@ export const Highlighter = (props: Props) => {
     }
 
     const onMouseOver = () => {
-        dispatch(changeHighlighterHoverId(getHighlighterId()))
-        const element = document.getElementById('tafseer_' + highlighterId)
-        scrollToElement(element)
+        dispatch(changeHighlighterHoverId(getHighlighterIdConcatWithSuraAndAya()))
+        const element = document.getElementById('tafseer_' + getHighlighterIdConcatWithSuraAndAya())
+        if (element) {
+            scrollToElement(element)
+        }
     }
 
     const onMouseLeave = () => {
@@ -35,24 +38,24 @@ export const Highlighter = (props: Props) => {
     }
 
     const onClick = () => {
-        dispatch(changeHighlighterActiveId(getHighlighterId()))
-        dispatch(setFilter({ key: 'currentAya', value:ayaNumber.toString()}))
+        dispatch(changeHighlighterActiveId(getHighlighterIdConcatWithSuraAndAya()))
+        dispatch(setFilter({key: 'currentAya', value: ayaNumber.toString()}))
         const element = document.getElementById(highlighterId)
         scrollToElement(element)
     }
 
-    const getHighlighterId = () => {
-        return `${highlighterId}`
+    const getHighlighterIdConcatWithSuraAndAya = () => {
+        return `${surahNumber}_${ayaNumber}`
     }
 
     const scrollToElement = (elementRef: any) => {
-        // elementRef.scrollIntoView();
+        elementRef?.scrollIntoView();
     }
 
 
     return <a onClick={onClick} onMouseLeave={onMouseLeave} onMouseOver={onMouseOver} style={style}
               id={`${highlighterId}`}
               className={
-                  `highlighter ${highlighterActiveId === getHighlighterId() ? 'active' : ''} ${highlighterHoverId === getHighlighterId() ? 'hover' : ''}`
+                  `highlighter ${highlighterActiveId === getHighlighterIdConcatWithSuraAndAya() ? 'active' : ''} ${highlighterHoverId === getHighlighterIdConcatWithSuraAndAya() ? 'hover' : ''}`
               }/>
 }

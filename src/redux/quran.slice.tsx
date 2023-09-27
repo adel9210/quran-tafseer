@@ -101,6 +101,11 @@ export const quranSlice = createSlice({
             state.activeSuraInfo = action.payload
         },
         setFilter: (state, action: PayloadAction<{ key: filterTypes, value: string }>) => {
+            if (action.payload.key !== 'currentAya'){
+                state.highlighterActiveId = ''
+                state.highlighterHoverId = ''
+            }
+
             let filter = {...state.filter, [action.payload.key]: action.payload.value}
             const sura = state.activeSuraInfo;
             switch (action.payload.key) {

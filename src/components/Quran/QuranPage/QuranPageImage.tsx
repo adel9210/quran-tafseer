@@ -1,4 +1,4 @@
-import {Aya, QuranDataPageDetails} from "../../../quranData";
+import {Aya} from "../../../quranData";
 import {Highlighter} from "./Highlighter/Highlighter";
 import {useSelector} from "react-redux";
 import {getTafseerState} from "../../../redux/selectors";
@@ -23,7 +23,7 @@ export const QuranPageImage = (props: Props) => {
         <img className='quran-page__img' src={`https://al-th3labe.omgsys.com/quranImages/${props?.pageNumber}.png`}
              alt={props.pageNumber}/>
         {
-            pageHighlighters?.map(({highlighterId, ayaNumber, styles}, index) => {
+            pageHighlighters?.map(({highlighterId, ayaNumber, styles, surahNumber}, index) => {
                 const [width, top, left, height] = styles
                 return <Highlighter
                     key={ayaNumber + index}
@@ -32,6 +32,7 @@ export const QuranPageImage = (props: Props) => {
                     width={width}
                     height={height}
                     ayaNumber={ayaNumber}
+                    surahNumber={surahNumber}
                     highlighterId={highlighterId}/>
             })
         }

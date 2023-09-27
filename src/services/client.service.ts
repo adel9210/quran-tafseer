@@ -23,7 +23,7 @@ export const getSuraDetails = async (suraIndex: number) => {
 export const getSuraQuarter = (suraNumber: number): string => {
     const item = Quarters.filter(quarter => quarter.suraNumber === suraNumber)
     const firstQuarter = item[0]
-    return (Math.round(firstQuarter.quarterIndex / 8) + 1).toString()
+    return (Math.round(firstQuarter?.quarterIndex / 8) + 1).toString()
 }
 
 export const getPageDetails = (pageNumber: number): typeof Pages => {
