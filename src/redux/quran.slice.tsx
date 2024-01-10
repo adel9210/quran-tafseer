@@ -151,8 +151,10 @@ export const quranSlice = createSlice({
 
             }
             state.filter = {...filter}
+        },
+        setBulkFilters: (state, action: PayloadAction<any>) =>{
+                state.filter = action.payload
         }
-
     },
 })
 
@@ -162,6 +164,7 @@ export const {
     changeHighlighterActiveId,
     setActiveModal,
     setFilter,
+    setBulkFilters,
     setSuraInfo
 } = quranSlice.actions
 

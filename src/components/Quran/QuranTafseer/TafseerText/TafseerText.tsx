@@ -24,8 +24,6 @@ export const TafseerText = (props: Props) => {
             marginInlineStart: filter?.tafseerLang === 'en' ? '0' : '10px',
             marginInlineEnd: filter?.tafseerLang === 'en' ? '10px' : '0',
         }} className='tafseer-text__aya-number'>( {ayaNumber} ) </h3>
-        <h2 className='tafseer-text__aya-text'>
-            {text}
-        </h2>
+        <h2 className='tafseer-text__aya-text'  dangerouslySetInnerHTML={{ __html: text }}/>
     </div>
 }

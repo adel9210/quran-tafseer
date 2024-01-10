@@ -4,6 +4,7 @@ import {useSelector} from "react-redux";
 import {getTafseerState} from "../../../redux/selectors";
 import {useEffect, useState} from "react";
 import {getPageHighlighters} from "../../../services/client.service";
+import ImageLoader from "./Image";
 
 interface Props {
     pageNumber: string
@@ -20,8 +21,9 @@ export const QuranPageImage = (props: Props) => {
     }, [filter])
 
     return <>
-        <img className='quran-page__img' src={`https://al-th3labe.omgsys.com/quranImages/${props?.pageNumber}.png`}
-             alt={props.pageNumber}/>
+        <ImageLoader imageUrl={`https://al-th3labe.omgsys.com/quranImages/${props?.pageNumber}.png`} />
+        {/*<img className='quran-page__img' src={`https://al-th3labe.omgsys.com/quranImages/${props?.pageNumber}.png`}*/}
+        {/*     alt={props.pageNumber}/>*/}
         {
             pageHighlighters?.map(({highlighterId, ayaNumber, styles, surahNumber}, index) => {
                 const [width, top, left, height] = styles
