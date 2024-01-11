@@ -53,7 +53,7 @@ export const Highlighter = (props: Props) => {
     }
 
 
-    return <a onClick={onClick} onMouseLeave={onMouseLeave} onMouseOver={onMouseOver} style={style}
+    return <a onClick={onClick} onTouchStart={onClick} onMouseLeave={onMouseLeave} onMouseOver={onMouseOver} style={style}
               id={`${highlighterId}`}
               className={
                   `highlighter ${highlighterActiveId === getHighlighterIdConcatWithSuraAndAya() ? 'active' : ''} ${highlighterHoverId === getHighlighterIdConcatWithSuraAndAya() ? 'hover' : ''}`

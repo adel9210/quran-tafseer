@@ -30,9 +30,10 @@
   }
 
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 800px) {
+    zoom: 65%;
     &__view {
-      flex-direction: column;
+      flex-direction: column!important;
     }
   }
 }
