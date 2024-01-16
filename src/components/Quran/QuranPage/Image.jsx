@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'react';
+import {isMobile} from "../../../lib";
 
-const ImageLoader = ({ imageUrl }) => {
+const ImageLoader = ({imageUrl}) => {
     const [loading, setLoading] = useState(true);
     const [imageError, setImageError] = useState(false);
-
+    const isMobileDevice = isMobile();
     useEffect(() => {
         const loadImage = async () => {
             setLoading(true)
@@ -40,7 +41,8 @@ const ImageLoader = ({ imageUrl }) => {
         <div>
             {loading && <p>جاري تحميل الصفحه...</p>}
             {imageError && <p>Error loading image</p>}
-            {!loading && !imageError && <img src={imageUrl} alt="Loaded Image" />}
+            {!loading && !imageError &&
+                <img src={imageUrl} alt="Loaded Image" style={{width: '456px'}}/>}
         </div>
     );
 };

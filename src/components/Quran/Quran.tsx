@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import {QuranPage} from "./QuranPage/QuranPage";
 import {QuranTafseer} from "./QuranTafseer/QuranTafseer";
 import './Quran.scss';
@@ -7,6 +7,8 @@ import {getTafseerState} from "../../redux/selectors";
 import {QuranMarker} from "./QuranMarker/QuranMarker";
 import {setBulkFilters, setFilter} from "../../redux/quran.slice";
 import {useLocation} from 'react-router-dom';
+import {QuranPlayer} from "../QuranPlayer/QuranPlayer";
+import {isMobile} from "../../lib";
 
 const isPageValid = (page: number) => {
     return page > 0 && page <= 604
@@ -15,8 +17,9 @@ const isPageValid = (page: number) => {
 export const Quran = () => {
     const dispatch = useDispatch();
     const location = useLocation();
-
     const {filter} = useSelector(getTafseerState)
+    const isMobileDevice = isMobile()
+    const [zoomLevel, setZoomLevel] = useState(100);
 
     const handleNavigation = (event: React.MouseEvent, state: 'next' | 'prev') => {
         event.preventDefault()
@@ -61,6 +64,27 @@ export const Quran = () => {
     }, [filter]);
 
 
+    const calculateZoomLevel = () => {
+        const deviceWidth =  document.documentElement.clientWidth || document.body.clientWidth;
+        debugger
+        const paddingSize = 30;
+        const imageWidth = 456;
+        if (deviceWidth < 960) {
+            const calculatedZoomLevel = ((deviceWidth - paddingSize) / imageWidth) * 100;
+            setZoomLevel(calculatedZoomLevel > 100 ? 100 : calculatedZoomLevel);
+        }
+    };
+
+    useEffect(() => {
+        calculateZoomLevel();
+        window.addEventListener('resize', calculateZoomLevel);
+
+        return () => {
+            window.removeEventListener('resize', calculateZoomLevel);
+        };
+    }, []);
+
+
     useEffect(() => {
         const getUrlParams = (search: string): Record<string, string> => {
             const params = new URLSearchParams(search);
@@ -81,11 +105,11 @@ export const Quran = () => {
 
 
     return <div className='quran-container'>
-        <div className='quran'>
+        <div className={`quran ${isMobileDevice ? 'quran--mobile' : ''}`}>
             <div className="quran__view"
-                 style={{flexDirection: Number(filter?.currentPage) % 2 === 0 ? 'row-reverse' : 'row'}}>
+                 style={{flexDirection: Number(filter?.currentPage) % 2 === 0 ? 'row-reverse' : 'row', zoom: `${zoomLevel}%`}}>
                 <QuranPage/>
-                <QuranMarker/>
+                {!isMobileDevice && <QuranMarker/>}
                 <QuranTafseer/>
             </div>
 
@@ -96,6 +120,10 @@ export const Quran = () => {
                 <a href="" onClick={(e) => handleNavigation(e, 'next')} title='Next'>
                     <img src={require('../../assets/images/left-arrow.png')} alt=''/>
                 </a>
+            </div>
+
+            <div className='quran__player'>
+                {isMobileDevice && <QuranPlayer/>}
             </div>
         </div>
     </div>

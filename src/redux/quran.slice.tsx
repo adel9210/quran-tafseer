@@ -1,5 +1,5 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit'
-import {filterTypes, Sura} from "../types";
+import {filterTypes, Sura, Tafseer} from "../types";
 import {
     getGoz2Details,
     getPageDetails,
@@ -13,11 +13,14 @@ export interface QuranSliceType {
     highlighterHoverId: string
     highlighterActiveId: string,
     activeSuraInfo: Sura,
+    activeTafseerPage:Tafseer[];
     modal?: {
         isSuraModalOpen?: boolean
         isAyaModalOpen?: boolean
         isPageModalOpen?: boolean,
         isGoz2ModalOpen?: boolean,
+        isTafseerModalOpen?: boolean,
+        isMobileFilterModalOpen?: boolean,
     },
     filter?: {
         currentPage?: string,
@@ -154,6 +157,9 @@ export const quranSlice = createSlice({
         },
         setBulkFilters: (state, action: PayloadAction<any>) =>{
                 state.filter = action.payload
+        },
+        setPageTafseer: (state, action: PayloadAction<Tafseer[]>) =>{
+            state.activeTafseerPage = action.payload
         }
     },
 })
@@ -165,7 +171,8 @@ export const {
     setActiveModal,
     setFilter,
     setBulkFilters,
-    setSuraInfo
+    setSuraInfo,
+    setPageTafseer
 } = quranSlice.actions
 
 export default quranSlice.reducer

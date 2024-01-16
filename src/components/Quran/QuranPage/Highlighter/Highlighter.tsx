@@ -1,7 +1,13 @@
 import './Highlighter.scss'
 import {useDispatch, useSelector} from "react-redux";
 import {RootState} from "../../../../redux/store";
-import {changeHighlighterActiveId, changeHighlighterHoverId, setFilter} from "../../../../redux/quran.slice";
+import {
+    changeHighlighterActiveId,
+    changeHighlighterHoverId,
+    setActiveModal,
+    setFilter
+} from "../../../../redux/quran.slice";
+import {isMobile} from "../../../../lib";
 
 interface Props {
     top: number,
@@ -40,8 +46,14 @@ export const Highlighter = (props: Props) => {
     const onClick = () => {
         dispatch(changeHighlighterActiveId(getHighlighterIdConcatWithSuraAndAya()))
         dispatch(setFilter({key: 'currentAya', value: ayaNumber.toString()}))
-        const element = document.getElementById(highlighterId)
-        scrollToElement(element)
+
+        if (isMobile()) {
+            dispatch(setActiveModal({isTafseerModalOpen: true}))
+
+        } else {
+            const element = document.getElementById(highlighterId)
+            scrollToElement(element)
+        }
     }
 
     const getHighlighterIdConcatWithSuraAndAya = () => {
@@ -53,9 +65,16 @@ export const Highlighter = (props: Props) => {
     }
 
 
-    return <a onClick={onClick} onTouchStart={onClick} onMouseLeave={onMouseLeave} onMouseOver={onMouseOver} style={style}
-              id={`${highlighterId}`}
-              className={
-                  `highlighter ${highlighterActiveId === getHighlighterIdConcatWithSuraAndAya() ? 'active' : ''} ${highlighterHoverId === getHighlighterIdConcatWithSuraAndAya() ? 'hover' : ''}`
-              }/>
+    return <div>
+        <a
+            onClick={onClick}
+            onTouchStart={onClick}
+            onMouseLeave={onMouseLeave}
+            onMouseOver={onMouseOver}
+            style={style}
+            id={`${highlighterId}`}
+            className={
+                `highlighter ${highlighterActiveId === getHighlighterIdConcatWithSuraAndAya() ? 'active' : ''} ${highlighterHoverId === getHighlighterIdConcatWithSuraAndAya() ? 'hover' : ''}`
+            }/>
+    </div>
 }

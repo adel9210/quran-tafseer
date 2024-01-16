@@ -28,7 +28,7 @@ export const QuranPageImage = (props: Props) => {
             pageHighlighters?.map(({highlighterId, ayaNumber, styles, surahNumber}, index) => {
                 const [width, top, left, height] = styles
                 return <Highlighter
-                    key={ayaNumber + index}
+                    key={highlighterId}
                     top={top}
                     left={left}
                     width={width}

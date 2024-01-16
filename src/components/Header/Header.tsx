@@ -11,6 +11,7 @@ import {useCallback, useEffect, useRef, useState} from "react";
 import {Col, Container, Row} from "react-bootstrap";
 import {getSuraDetails, getSuraList} from "../../services/client.service";
 import {ModalTypes, Sura} from "../../types";
+import {QuranPlayer} from "../QuranPlayer/QuranPlayer";
 
 const tafseerOptions = [
     {value: 'th3labe', label: 'الثعلبي'},
@@ -46,58 +47,21 @@ const style = {
     })
 };
 
-export const Header = () => {
+interface Props {
+    showLogo?: boolean
+    showPlayer?: boolean
+}
+
+export const Header = (props: Props) => {
     const dispatch = useDispatch()
     const {filter} = useSelector(getTafseerState)
     const [selectedSura, setSelectedSura] = useState<Sura>()
-    const [shouldPlay, setShouldPlay] = useState(false);
-    const playerRef = useRef<any>();
-
-    console.log('STATE IS', filter)
-
-    const getCurrentLink = useCallback(() => {
-        const sura = Number(filter?.currentSura).toLocaleString('en-US', {minimumIntegerDigits: 3, useGrouping: false})
-        const aya = Number(filter?.currentAya).toLocaleString('en-US', {minimumIntegerDigits: 3, useGrouping: false})
-        const sheikh = filter?.currentSheikh;
-
-        setHighlighterId()
-        return `https://quran.ksu.edu.sa/ayat/mp3/${sheikh}/${sura}${aya}.mp3`
-    }, [filter])
+    const {showLogo , showPlayer } = props
 
     const onModalSelectClick = (type: ModalTypes) => {
         dispatch(setActiveModal({[type]: true}))
     }
 
-    const getHighlighterIdConcatWithSuraAndAya = () => {
-        return `${filter?.currentSura}_${filter?.currentAya}`
-    }
-
-
-    const goToNextAya = () => {
-        if (ifLastAyaInSurah(filter?.currentAya)) {
-            const nextSuraIndex = Number(filter?.currentSura) + 1
-            dispatch(setSuraInfo(getSuraDetails(nextSuraIndex)))
-            dispatch(setFilter({
-                key: 'currentSura',
-                value: nextSuraIndex.toString()
-            }))
-        } else {
-            dispatch(setFilter({
-                key: 'currentAya',
-                value: (Number(filter?.currentAya) + 1).toString()
-            }))
-        }
-    }
-
-    const ifLastAyaInSurah = (aya?: string) => {
-        const currentSurah = getSuraDetails(Number(filter?.currentSura))
-        return Number(aya) === currentSurah.ayaCount;
-    }
-
-
-    const setHighlighterId = () => {
-        dispatch(changeHighlighterActiveId(getHighlighterIdConcatWithSuraAndAya()))
-    }
 
     useEffect(() => {
         if (filter?.currentSura) {
@@ -110,10 +74,10 @@ export const Header = () => {
     return <div className='header'>
         <Container>
             <Row>
-                <Col md={2} className='co-left-border'>
+                {showLogo && <Col md={2} className='co-left-border'>
                     <img src={require('../../assets/images/logo.png')} alt='Logo' height={190}/>
-                </Col>
-                <Col md={5} className='co-left-border'>
+                </Col>}
+                <Col xs={12} md={5} className='co-left-border'>
                     <div className='header__pair'>
                         <div className='header__pair__item'>
                             <div className='header__pair__item__control'>
@@ -150,7 +114,7 @@ export const Header = () => {
                         </div>
                     </div>
                 </Col>
-                <Col md={5}>
+                <Col xs={12} md={5}>
                     <div className='header__pair'>
                         <div className='header__pair__item'>
                             <div className='header__pair__item__control'>
@@ -180,25 +144,9 @@ export const Header = () => {
                                         placeholder='إختر'/>
                             </div>
                         </div>
-                        <div className='header__pair__item header__pair__item__control'>
-                            <AudioPlayer
-                                ref={playerRef}
-                                customAdditionalControls={[<CustomStopButton onClick={() => {
-                                    setShouldPlay(false)
-                                    playerRef.current.audio.current.pause()
-                                }}/>]}
-                                style={{direction: 'ltr'}}
-                                autoPlay={false}
-                                src={getCurrentLink()}
-                                onPlay={e => {
-                                    setShouldPlay(true)
-                                }}
-                                // onPause={e => setShouldPlay(false)}
-                                autoPlayAfterSrcChange={shouldPlay}
-                                onEnded={goToNextAya}
-                                // other props here
-                            />
-                        </div>
+                        {
+                            showPlayer && <QuranPlayer/>
+                        }
                     </div>
                 </Col>
             </Row>
@@ -207,19 +155,3 @@ export const Header = () => {
 }
 
 
-const CustomStopButton = (props: { onClick: () => void }) => {
-    return <button onClick={props.onClick} aria-label="Stop"
-                   className="rhap_button-clear rhap_main-controls-button rhap_play-pause-button"
-                   type="button">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-            <g id="SVGRepo_iconCarrier">
-                <path d="M15 9H9V15H15V9Z" fill="#868686"></path>
-                <path fill-rule="evenodd" clip-rule="evenodd"
-                      d="M23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12ZM21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
-                      fill="#868686"></path>
-            </g>
-        </svg>
-    </button>
-}

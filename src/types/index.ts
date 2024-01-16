@@ -9,6 +9,11 @@ export interface Sura {
     pageEnd: number
 }
 
+export interface Tafseer {
+    highlighterId:string;
+    text:string
+}
 
-export type ModalTypes = 'isSuraModalOpen' | 'isAyaModalOpen' | 'isPageModalOpen' | 'isGoz2ModalOpen'
+
+export type ModalTypes = 'isSuraModalOpen' | 'isAyaModalOpen' | 'isPageModalOpen' | 'isGoz2ModalOpen' | 'isTafseerModalOpen' | 'isMobileFilterModalOpen'
 export type filterTypes = 'currentPage' | 'currentSura' | 'currentAya' | 'currentGoz2' | 'currentSheikh' | 'currentQuarter' | 'tafseerLang'

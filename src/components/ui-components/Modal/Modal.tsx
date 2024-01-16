@@ -4,18 +4,19 @@ import React from "react";
 interface Props {
     children: JSX.Element,
     onClose?: () => void,
-    title:string
+    title: string
+    style?: any
 }
 
 export const Modal = (props: Props) => {
-    const {children, onClose, title} = props
+    const {children, onClose, title, style} = props
 
     const onOutSideClose = (e: React.MouseEvent<HTMLAnchorElement | HTMLDivElement, MouseEvent>) => {
         e.stopPropagation();
     }
 
-    return <div className='co-modal' onClick={onClose}>
-        <div className='co-modal-container' onClick={(e)=> onOutSideClose(e)}>
+    return <div className='co-modal' style={{...style}}>
+        <div className='co-modal-container' onClick={(e) => onOutSideClose(e)}>
             <div className='co-modal__header'>
                 <h2 className='co-modal__header__heading'> {title}</h2>
                 <a onClick={onClose}>
