@@ -66,7 +66,6 @@ export const Quran = () => {
 
     const calculateZoomLevel = () => {
         const deviceWidth =  document.documentElement.clientWidth || document.body.clientWidth;
-        debugger
         const paddingSize = 30;
         const imageWidth = 456;
         if (deviceWidth < 960) {
@@ -109,16 +108,16 @@ export const Quran = () => {
             <div className="quran__view"
                  style={{flexDirection: Number(filter?.currentPage) % 2 === 0 ? 'row-reverse' : 'row', zoom: `${zoomLevel}%`}}>
                 <QuranPage/>
-                {!isMobileDevice && <QuranMarker/>}
+                {/*{!isMobileDevice && <QuranMarker/>}*/}
                 <QuranTafseer/>
             </div>
 
             <div className='quran__controls'>
                 <a href="" onClick={(e) => handleNavigation(e, 'prev')} title='Prev'>
-                    <img src={require('../../assets/images/right-arrow.png')} alt=''/>
+                    <img src={require('../../assets/images/arrow-right.svg').default} alt=''/>
                 </a>
                 <a href="" onClick={(e) => handleNavigation(e, 'next')} title='Next'>
-                    <img src={require('../../assets/images/left-arrow.png')} alt=''/>
+                    <img src={require('../../assets/images/arrow-left.svg').default} alt=''/>
                 </a>
             </div>
 

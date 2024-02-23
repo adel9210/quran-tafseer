@@ -28,6 +28,7 @@ const tafseerLanguage = [
 ]
 
 const sheikhOptions = [
+    {value: 'SalahBathman_64kbps', label: 'صلاح باعثمان'},
     {value: 'Husary_64kbps', label: 'الحصري'},
     {value: 'Nasser_Alqatami_128kbps', label: 'ناصر القطامي'},
     {value: 'Abdul_Basit_Murattal_64kbps', label: 'عبدالباسط عبدالصمد'},
@@ -80,10 +81,10 @@ export const Header = (props: Props) => {
                 <Col xs={12} md={5} className='co-left-border'>
                     <div className='header__pair'>
                         <div className='header__pair__item'>
-                            <div className='header__pair__item__control'>
-                                <label className='header__pair__item__control__label'>البحث</label>
-                                <input className='co-input' placeholder='إختر'/>
-                            </div>
+                            {/*<div className='header__pair__item__control'>*/}
+                            {/*    <label className='header__pair__item__control__label'>البحث</label>*/}
+                            {/*    <input className='co-input' placeholder='إختر'/>*/}
+                            {/*</div>*/}
                             <div className='header__pair__item__control'>
                                 <label className='header__pair__item__control__label'>التفسير</label>
                                 <Select isDisabled={true} styles={style} options={tafseerOptions}
@@ -131,18 +132,19 @@ export const Header = (props: Props) => {
                                     }}
                                     placeholder='إختر'/>
                             </div>
-                            <div className='header__pair__item__control'>
-                                <label className='header__pair__item__control__label'>لغة التفسير</label>
-                                <Select styles={style}
-                                        options={tafseerLanguage}
-                                        onChange={(item) => {
-                                            dispatch(setFilter({
-                                                key: 'tafseerLang',
-                                                value: item?.value || ''
-                                            }))
-                                        }}
-                                        placeholder='إختر'/>
-                            </div>
+                            {/*<div className='header__pair__item__control'>*/}
+                            {/*    <label className='header__pair__item__control__label'>لغة التفسير</label>*/}
+                            {/*    <Select styles={style}*/}
+                            {/*            options={tafseerLanguage}*/}
+                            {/*            onChange={(item) => {*/}
+                            {/*                dispatch(setFilter({*/}
+                            {/*                    key: 'tafseerLang',*/}
+                            {/*                    value: item?.value || ''*/}
+                            {/*                }))*/}
+                            {/*            }}*/}
+                            {/*            isDisabled={true}*/}
+                            {/*            placeholder='عربي'/>*/}
+                            {/*</div>*/}
                         </div>
                         {
                             showPlayer && <QuranPlayer/>

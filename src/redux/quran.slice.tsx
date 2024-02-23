@@ -40,7 +40,7 @@ const initialState: Partial<QuranSliceType> = {
         currentPage: '1',
         currentGoz2: '1',
         currentQuarter: '1',
-        currentSheikh: 'Husary_64kbps',
+        currentSheikh: 'SalahBathman_64kbps',
         tafseerLang: 'ar'
     }
 }

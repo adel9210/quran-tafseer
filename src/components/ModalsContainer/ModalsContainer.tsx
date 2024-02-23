@@ -50,7 +50,7 @@ export const ModalsContainer = () => {
 
 
         {isMobileFilterModalOpen &&
-            <Modal key={5} style={{zIndex: 19}} title='بحث' onClose={() => resetModal('isMobileFilterModalOpen')}>
+            <Modal isOutSideClose={true} key={5} style={{zIndex: 19}} title='بحث' onClose={() => resetModal('isMobileFilterModalOpen')}>
                 <MobileFilterModal/>
             </Modal>
         }

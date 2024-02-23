@@ -34,7 +34,7 @@ export const QuranPlayer = ()=> {
         const sheikh = filter?.currentSheikh;
 
         setHighlighterId()
-        return `https://quran.ksu.edu.sa/ayat/mp3/${sheikh}/${sura}${aya}.mp3`
+        return `https://al-th3labe.omgsys.com/mp3/${sheikh}/${sura}${aya}.mp3`
     }, [filter])
 
     const goToNextAya = () => {

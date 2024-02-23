@@ -5,17 +5,24 @@ interface Props {
     children: JSX.Element,
     onClose?: () => void,
     title: string
-    style?: any
+    style?: any;
+    isOutSideClose?:boolean
 }
 
 export const Modal = (props: Props) => {
-    const {children, onClose, title, style} = props
+    const {children, onClose, title, style, isOutSideClose} = props
 
     const onOutSideClose = (e: React.MouseEvent<HTMLAnchorElement | HTMLDivElement, MouseEvent>) => {
         e.stopPropagation();
     }
 
-    return <div className='co-modal' style={{...style}}>
+    const closeOutSide = (event:any)=>{
+        if (isOutSideClose && event.target.classList.contains('co-modal')){
+            onClose?.()
+        }
+    }
+
+    return <div className='co-modal' style={{...style}} onClick={closeOutSide}>
         <div className='co-modal-container' onClick={(e) => onOutSideClose(e)}>
             <div className='co-modal__header'>
                 <h2 className='co-modal__header__heading'> {title}</h2>

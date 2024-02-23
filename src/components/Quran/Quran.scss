@@ -19,6 +19,8 @@
     justify-content: space-between;
     top: 50%;
     left: 0;
+    padding: 0 50px;
+    z-index: 9999;
   }
 
   &__view {
@@ -51,10 +53,14 @@
 
     &-container {
       padding: 0;
+      background-color: transparent;
+      box-shadow: none;
     }
     &__controls {
-      top: unset;
-      bottom: 100px;
+      bottom: unset;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 0;
     }
   }
 }
