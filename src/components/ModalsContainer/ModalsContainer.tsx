@@ -10,6 +10,7 @@ import {ModalTypes} from "../../types";
 import {Goz2Modal} from "../ui-components/Goz2Modal/Goz2Modal";
 import {TafseerModal} from "../ui-components/TafseerModal/TafseerModal";
 import {MobileFilterModal} from "../ui-components/MobileFilterModal/MobileFilterModal";
+import {TafseerIframeModal} from "../ui-components/TafseerIframeModal/TafseerIframeModal";
 
 export const ModalsContainer = () => {
     const dispatch = useDispatch()
@@ -19,6 +20,7 @@ export const ModalsContainer = () => {
         isAyaModalOpen,
         isPageModalOpen,
         isGoz2ModalOpen,
+        isTafseerIframeModalOpen,
         isTafseerModalOpen,
         isMobileFilterModalOpen
     } = useSelector(getActiveModals);
@@ -38,8 +40,8 @@ export const ModalsContainer = () => {
             <AyaModal/>
         </Modal>
         }
-        {isTafseerModalOpen && <Modal key={3} title='تفسير' onClose={() => resetModal('isTafseerModalOpen')}>
-            <TafseerModal/>
+        {isTafseerModalOpen && <Modal key={3} title='' onClose={() => resetModal('isTafseerModalOpen')}>
+            <TafseerIframeModal/>
         </Modal>
         }
 
@@ -52,6 +54,13 @@ export const ModalsContainer = () => {
         {isMobileFilterModalOpen &&
             <Modal isOutSideClose={true} key={5} style={{zIndex: 19}} title='بحث' onClose={() => resetModal('isMobileFilterModalOpen')}>
                 <MobileFilterModal/>
+            </Modal>
+        }
+
+
+        {isTafseerIframeModalOpen &&
+            <Modal isOutSideClose={true} key={5} style={{zIndex: 19}} title='' onClose={() => resetModal('isTafseerIframeModalOpen')}>
+                <TafseerIframeModal/>
             </Modal>
         }
 

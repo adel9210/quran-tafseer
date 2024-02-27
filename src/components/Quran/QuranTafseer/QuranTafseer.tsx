@@ -23,8 +23,8 @@ export const QuranTafseer = forwardRef((props, ref: ForwardedRef<HTMLDivElement>
 
     return <div className='quran-tafseer' ref={ref}>
         {
-            tafseerPageText?.map(({text, highlighterId}, index) => {
-                return <TafseerText highlighterId={highlighterId} key={index} text={text} ayaNumber={highlighterId}/>
+            tafseerPageText?.map(({text, highlighterId, iframeURL}, index) => {
+                return <TafseerText iframeURL={iframeURL} highlighterId={highlighterId} key={index} text={text} ayaNumber={highlighterId}/>
             })
         }
     </div>

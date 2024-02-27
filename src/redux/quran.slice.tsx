@@ -20,6 +20,7 @@ export interface QuranSliceType {
         isPageModalOpen?: boolean,
         isGoz2ModalOpen?: boolean,
         isTafseerModalOpen?: boolean,
+        isTafseerIframeModalOpen?: boolean,
         isMobileFilterModalOpen?: boolean,
     },
     filter?: {
@@ -29,6 +30,7 @@ export interface QuranSliceType {
         currentGoz2?: string,
         currentQuarter?: string,
         currentSheikh?: string,
+        tafseerIframeURL?:string,
         tafseerLang?: 'ar' | 'en'
     }
 }

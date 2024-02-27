@@ -57,7 +57,7 @@ export const getGoz2Details = (goz2Number: number): typeof Goz2Items => {
 
 
 export const getPageTafseer = async (language:string, pageNumber: number) => {
-    const response = await axiosInstance.get<AyaTafseer[]>(`TafseerPages/${language}/${pageNumber}.json`)
+    const response = await axios.get<AyaTafseer[]>(`json/1.json`)
     return response.data
 }
 

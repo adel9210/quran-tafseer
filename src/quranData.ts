@@ -10,6 +10,7 @@ export interface AyaTafseer {
     highlighterId: string,
     surahNumber: number,
     text: string
+    iframeURL: string
 }
 
 export const SuraList: [number, number, number, number, string, string, string, string, number, number][] = [

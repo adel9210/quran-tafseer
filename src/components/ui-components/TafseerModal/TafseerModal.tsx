@@ -7,6 +7,7 @@ import {Tafseer} from "../../../types";
 export const TafseerModal = () => {
     const {activeTafseerPage, highlighterActiveId} = useSelector(getTafseerState)
     const [tafseer, setTafseer] = useState<Tafseer>()
+    const {filter} = useSelector(getTafseerState)
 
 
     useEffect(() => {
@@ -15,6 +16,7 @@ export const TafseerModal = () => {
     }, [activeTafseerPage])
 
 
-    return <div dangerouslySetInnerHTML={{__html: tafseer?.text || ''}}/>
+    // return <div dangerouslySetInnerHTML={{__html: tafseer?.text || ''}}/>
+    return <iframe style={{width: '100%', height: '100%'}} src={filter?.tafseerIframeURL}></iframe>
 
 }

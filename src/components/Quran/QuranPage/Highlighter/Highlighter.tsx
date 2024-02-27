@@ -8,6 +8,7 @@ import {
     setFilter
 } from "../../../../redux/quran.slice";
 import {isMobile} from "../../../../lib";
+import {useEffect, useState} from "react";
 
 interface Props {
     top: number,
@@ -23,6 +24,7 @@ export const Highlighter = (props: Props) => {
     const {top, width, left, height = 30, ayaNumber, highlighterId, surahNumber} = props
     const {highlighterActiveId, highlighterHoverId} = useSelector((state: RootState) => state.quran)
     const dispatch = useDispatch()
+    const [clickCount, setClickCount] = useState(0);
 
     const style = {
         width,
@@ -30,6 +32,20 @@ export const Highlighter = (props: Props) => {
         left,
         height
     }
+
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            if (clickCount === 1) {
+                console.log('Single tap');
+            } else if (clickCount === 2) {
+                dispatch(setActiveModal({isTafseerModalOpen: true}))
+            }
+            setClickCount(0);
+        }, 300); // Adjust the timeout based on your needs (e.g., 300ms for double click)
+
+        return () => clearTimeout(timer);
+    }, [clickCount]);
 
     const onMouseOver = () => {
         dispatch(changeHighlighterHoverId(getHighlighterIdConcatWithSuraAndAya()))
@@ -39,18 +55,15 @@ export const Highlighter = (props: Props) => {
         }
     }
 
-    const onMouseLeave = () => {
+    const onMouseLeave = (e:any) => {
         dispatch(changeHighlighterHoverId(''))
     }
 
-    const onClick = () => {
+    const onClick = (e:any) => {
         dispatch(changeHighlighterActiveId(getHighlighterIdConcatWithSuraAndAya()))
         dispatch(setFilter({key: 'currentAya', value: ayaNumber.toString()}))
 
-        if (isMobile()) {
-            dispatch(setActiveModal({isTafseerModalOpen: true}))
-
-        } else {
+        if (!isMobile()){
             const element = document.getElementById(highlighterId)
             scrollToElement(element)
         }
@@ -64,13 +77,17 @@ export const Highlighter = (props: Props) => {
         elementRef?.scrollIntoView();
     }
 
+    const handleTouchEnd = () => {
+        setClickCount((prev) => prev + 1);
+    };
 
     return <div>
         <a
             onClick={onClick}
-            onTouchStart={onClick}
             onMouseLeave={onMouseLeave}
             onMouseOver={onMouseOver}
+            onTouchEnd={handleTouchEnd}
+
             style={style}
             id={`${highlighterId}`}
             className={
