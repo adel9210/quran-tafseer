@@ -114,7 +114,7 @@ export const Quran = () => {
 
             {
                 !isMobile() && <div className='quran__controls'>
-                    <a href="" onClick={(e) => handleNavigation(e, 'prev')} title='Prev'>
+                    <a className='prev' href="" onClick={(e) => handleNavigation(e, 'prev')} title='Prev'>
 
                         <svg width="69px" height="40px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"
                              fill="#000000">
@@ -138,7 +138,7 @@ export const Quran = () => {
                         </svg>
                         {/*<img src={require('../../assets/images/arrow-right.svg').default} alt=''/>*/}
                     </a>
-                    <a href="" onClick={(e) => handleNavigation(e, 'next')} title='Next'>
+                    <a className='next' href="" onClick={(e) => handleNavigation(e, 'next')} title='Next'>
 
                         <svg width="69px" height="40px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"
                              fill="#000000">

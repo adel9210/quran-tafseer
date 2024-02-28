@@ -14,12 +14,19 @@ export const QuranTafseer = forwardRef((props, ref: ForwardedRef<HTMLDivElement>
 
 
     useEffect(() => {
+
         (async () => {
-            const response = await getPageTafseer(filter?.tafseerLang || 'ar', Number(filter?.currentPage))
-            setTafseerPageText(response)
-            dispatch(setPageTafseer(response))
+        console.log(filter?.tafseerLang,  filter?.currentPage)
+            try {
+                const response = await getPageTafseer(filter?.tafseerLang || 'ar', Number(filter?.currentPage))
+                setTafseerPageText(response)
+                dispatch(setPageTafseer(response))
+            }catch (e) {
+                setTafseerPageText([])
+                dispatch(setPageTafseer([]))
+            }
         })()
-    }, [filter])
+    }, [filter?.tafseerLang, filter?.currentPage])
 
     return <div className='quran-tafseer' ref={ref}>
         {

@@ -13,14 +13,24 @@
   }
 
   &__controls {
-    position: absolute;
     width: 100%;
     display: flex;
     justify-content: space-between;
-    top: 50%;
-    left: 0;
     padding: 0 50px;
-    z-index: 11;
+
+    & .prev, & .next {
+      position: absolute;
+      top: 50%;
+      z-index: 11;
+    }
+
+    & .prev {
+      right: 0;
+    }
+
+    & .next {
+      left: 0;
+    }
   }
 
   &__view {

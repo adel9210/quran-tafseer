@@ -6,7 +6,7 @@ import Goz2Items from '../mock/quran-goz2.json'
 import {Aya, AyaTafseer} from "../quranData";
 
 export const axiosInstance = axios.create({
-    baseURL: 'https://al-th3labe.omgsys.com/json/',
+    baseURL: 'https://al-thalabi.com/json/',
     timeout: 0,
     headers: {'X-Custom-Header': 'foobar'}
 });
@@ -57,7 +57,7 @@ export const getGoz2Details = (goz2Number: number): typeof Goz2Items => {
 
 
 export const getPageTafseer = async (language:string, pageNumber: number) => {
-    const response = await axios.get<AyaTafseer[]>(`json/1.json`)
+    const response = await axiosInstance.get<AyaTafseer[]>(`TafseerPages/${language}/${pageNumber}.json`)
     return response.data
 }
 

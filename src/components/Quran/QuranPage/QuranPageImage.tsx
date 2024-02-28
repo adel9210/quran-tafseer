@@ -18,10 +18,10 @@ export const QuranPageImage = (props: Props) => {
             const response = await getPageHighlighters(Number(filter?.currentPage))
             setPageHighlighters(response)
         })()
-    }, [filter])
+    }, [filter?.currentPage])
 
     return <>
-        <ImageLoader imageUrl={`https://al-th3labe.omgsys.com/quranImages/${props?.pageNumber}.png`} />
+        <ImageLoader imageUrl={`https://al-thalabi.com/quranImages/${props?.pageNumber}.png`} />
         {/*<img className='quran-page__img' src={`https://al-th3labe.omgsys.com/quranImages/${props?.pageNumber}.png`}*/}
         {/*     alt={props.pageNumber}/>*/}
         {
