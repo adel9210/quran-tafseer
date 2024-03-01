@@ -65,3 +65,10 @@ export const getPageHighlighters = async (pageNumber: number) => {
     const response = await axiosInstance.get<Aya[]>(`highlighterPages/${pageNumber}.json`)
     return response.data
 }
+
+export const getIframeURLByHighlighterId = async (language:string, pageNumber: number) => {
+    const response = await axiosInstance.get<Aya[]>(`TafseerPages/${language}/${pageNumber}.json`)
+    return response.data
+}
+
+

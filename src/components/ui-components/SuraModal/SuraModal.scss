@@ -5,6 +5,9 @@
   gap: 10px;
   & > div {
     flex: 1;
-    min-width: 80px;
+
+    button {
+      border: 1px solid #b2b9b8
+    }
   }
 }

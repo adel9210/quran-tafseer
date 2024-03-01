@@ -25,7 +25,7 @@ export const QuranPageImage = (props: Props) => {
         {/*<img className='quran-page__img' src={`https://al-th3labe.omgsys.com/quranImages/${props?.pageNumber}.png`}*/}
         {/*     alt={props.pageNumber}/>*/}
         {
-            pageHighlighters?.map(({highlighterId, ayaNumber, styles, surahNumber}, index) => {
+            pageHighlighters?.map(({highlighterId, ayaNumber, styles, surahNumber,noTafsir }, index) => {
                 const [width, top, left, height] = styles
                 return <Highlighter
                     key={highlighterId}
@@ -35,6 +35,7 @@ export const QuranPageImage = (props: Props) => {
                     height={height}
                     ayaNumber={ayaNumber}
                     surahNumber={surahNumber}
+                    noTafsir={noTafsir}
                     highlighterId={highlighterId}/>
             })
         }

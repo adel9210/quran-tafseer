@@ -2,6 +2,7 @@ export interface Aya {
     ayaNumber: number,
     surahNumber: number,
     highlighterId: string,
+    noTafsir:boolean,
     styles: number[],
     isSingleHighlighter: boolean
 }

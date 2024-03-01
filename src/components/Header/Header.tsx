@@ -147,19 +147,6 @@ export const Header = (props: Props) => {
                                     }}
                                     placeholder='إختر'/>
                             </div>
-                            {/*<div className='header__pair__item__control'>*/}
-                            {/*    <label className='header__pair__item__control__label'>لغة التفسير</label>*/}
-                            {/*    <Select styles={style}*/}
-                            {/*            options={tafseerLanguage}*/}
-                            {/*            onChange={(item) => {*/}
-                            {/*                dispatch(setFilter({*/}
-                            {/*                    key: 'tafseerLang',*/}
-                            {/*                    value: item?.value || ''*/}
-                            {/*                }))*/}
-                            {/*            }}*/}
-                            {/*            isDisabled={true}*/}
-                            {/*            placeholder='عربي'/>*/}
-                            {/*</div>*/}
                         </div>
                         {
                             showPlayer && <QuranPlayer/>

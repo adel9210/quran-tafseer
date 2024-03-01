@@ -7,9 +7,25 @@ import {ModalsContainer} from "./components/ModalsContainer/ModalsContainer";
 import {BrowserRouter} from "react-router-dom";
 import {MobileHeader} from "./components/MobileHeader/MobileHeader";
 import {isMobile} from "./lib";
+import {useEffect} from "react";
 
 function App() {
     const isMobileDevice = isMobile()
+
+    useEffect(() => {
+        const preventContextMenu = (e:any) => {
+            e.preventDefault();
+        };
+
+        document.addEventListener('contextmenu', preventContextMenu);
+
+        return () => {
+            document.removeEventListener('contextmenu', preventContextMenu);
+        };
+    }, []);
+
+
+
     return (
         <BrowserRouter>
             <div className="App">

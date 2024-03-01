@@ -8,6 +8,7 @@
       margin-inline-start: 15px;
       margin-bottom: 15px;
       flex: 1;
+      border: 1px solid #b2b9b8
     }
   }
 
@@ -29,6 +30,8 @@
 
       Button {
         margin-left: 10px;
+        border: 1px solid #b2b9b8
+
       }
 
       &__heading {

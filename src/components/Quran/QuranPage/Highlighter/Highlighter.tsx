@@ -9,6 +9,7 @@ import {
 } from "../../../../redux/quran.slice";
 import {isMobile} from "../../../../lib";
 import {useEffect, useState} from "react";
+import {getIframeURLByHighlighterId} from "../../../../services/client.service";
 
 interface Props {
     top: number,
@@ -18,11 +19,12 @@ interface Props {
     ayaNumber: number,
     surahNumber: number,
     highlighterId: string,
+    noTafsir:boolean
 }
 
 export const Highlighter = (props: Props) => {
-    const {top, width, left, height = 30, ayaNumber, highlighterId, surahNumber} = props
-    const {highlighterActiveId, highlighterHoverId} = useSelector((state: RootState) => state.quran)
+    const {top, width, left, height = 30, ayaNumber, highlighterId, surahNumber,noTafsir} = props
+    const {highlighterActiveId, highlighterHoverId, filter} = useSelector((state: RootState) => state.quran)
     const dispatch = useDispatch()
     const [clickCount, setClickCount] = useState(0);
 
@@ -39,7 +41,10 @@ export const Highlighter = (props: Props) => {
             if (clickCount === 1) {
                 console.log('Single tap');
             } else if (clickCount === 2) {
-                dispatch(setActiveModal({isTafseerModalOpen: true}))
+                if (!noTafsir){
+                    dispatch(setActiveModal({isTafseerIframeModalOpen: true}))
+                    dispatch(setFilter({key: 'tafseerIframeURL', value: `https://al-thalabi.com/htmltafsir/${filter?.tafseerLang}/${surahNumber}/${ayaNumber}.htm`}))
+                }
             }
             setClickCount(0);
         }, 300); // Adjust the timeout based on your needs (e.g., 300ms for double click)
