@@ -96,16 +96,22 @@ export const Header = (props: Props) => {
                 <Col xs={12} md={5} className='co-left-border'>
                     <div className='header__pair'>
                         <div className='header__pair__item'>
-                            {/*<div className='header__pair__item__control'>*/}
-                            {/*    <label className='header__pair__item__control__label'>البحث</label>*/}
-                            {/*    <input className='co-input' placeholder='إختر'/>*/}
-                            {/*</div>*/}
                             <div className='header__pair__item__control'>
-                                <label className='header__pair__item__control__label'>التفسير</label>
-                                <Select isDisabled={true} styles={style} options={tafseerOptions}
-                                        placeholder='الثعلبي'/>
+                                <label className='header__pair__item__control__label'>القارئ</label>
+                                <Select
+                                    value={sheikhOptions.filter(s => s.value === filter?.currentSheikh)}
+                                    styles={style} options={sheikhOptions}
+                                    onChange={(item) => {
+                                        console.log(item?.value)
+                                        dispatch(setFilter({
+                                            key: 'currentSheikh',
+                                            value: item?.value || ''
+                                        }))
+                                    }}
+                                    placeholder='إختر'/>
                             </div>
                         </div>
+
                         <div className='header__pair__item'>
                             <div className='header__pair__item__control'>
                                 <label className='header__pair__item__control__label'>السورة</label>
@@ -134,20 +140,12 @@ export const Header = (props: Props) => {
                     <div className='header__pair'>
                         <div className='header__pair__item'>
                             <div className='header__pair__item__control'>
-                                <label className='header__pair__item__control__label'>القارئ</label>
-                                <Select
-                                    value={sheikhOptions.filter(s => s.value === filter?.currentSheikh)}
-                                    styles={style} options={sheikhOptions}
-                                    onChange={(item) => {
-                                        console.log(item?.value)
-                                        dispatch(setFilter({
-                                            key: 'currentSheikh',
-                                            value: item?.value || ''
-                                        }))
-                                    }}
-                                    placeholder='إختر'/>
+                                <label className='header__pair__item__control__label'>التفسير</label>
+                                <Select isDisabled={true} styles={style} options={tafseerOptions}
+                                        placeholder='الثعلبي'/>
                             </div>
                         </div>
+
                         {
                             showPlayer && <QuranPlayer/>
                         }
