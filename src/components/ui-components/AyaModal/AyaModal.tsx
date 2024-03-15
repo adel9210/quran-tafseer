@@ -2,10 +2,11 @@ import {Button} from "../Button/Button";
 import './AyaModal.scss'
 import {useDispatch, useSelector} from "react-redux";
 import {getTafseerState} from "../../../redux/selectors";
-import {setActiveModal, setFilter} from "../../../redux/quran.slice";
+import {setActiveModal, setFilter, setPlayerStats} from "../../../redux/quran.slice";
 import {useEffect, useState} from "react";
 import {Sura} from "../../../types";
 import {getSuraDetails} from "../../../services/client.service";
+import {isMobile} from "../../../lib";
 
 
 export const AyaModal = () => {
@@ -25,6 +26,11 @@ export const AyaModal = () => {
     const onSelect = (data: any) => {
         dispatch(setFilter(data))
         dispatch(setActiveModal({['isAyaModalOpen']: false}))
+
+        if (isMobile()){
+            dispatch(setActiveModal({isMobileFilterModalOpen: false}))
+            dispatch(setPlayerStats(true))
+        }
     }
 
 

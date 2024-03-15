@@ -1,6 +1,6 @@
 import AudioPlayer from "react-h5-audio-player";
 import {useCallback, useRef, useState} from "react";
-import {changeHighlighterActiveId, setFilter, setSuraInfo} from "../../redux/quran.slice";
+import {changeHighlighterActiveId, setFilter, setPlayerStats, setSuraInfo} from "../../redux/quran.slice";
 import {getSuraDetails} from "../../services/client.service";
 import {useDispatch, useSelector} from "react-redux";
 import {getTafseerState} from "../../redux/selectors";
@@ -10,7 +10,10 @@ export const QuranPlayer = ()=> {
     const playerRef = useRef<any>();
     const dispatch = useDispatch()
     const {filter} = useSelector(getTafseerState)
+    const {shouldPlayerStart} = useSelector(getTafseerState)
 
+
+    console.log('shouldPlayerStart',shouldPlayerStart)
     const CustomStopButton = (props: { onClick: () => void }) => {
         return <button onClick={props.onClick} aria-label="Stop"
                        className="rhap_button-clear rhap_main-controls-button rhap_play-pause-button"
@@ -73,6 +76,7 @@ export const QuranPlayer = ()=> {
             customAdditionalControls={[<CustomStopButton onClick={() => {
                 setShouldPlay(false)
                 playerRef.current.audio.current.pause()
+                dispatch(setPlayerStats(false))
             }}/>]}
             style={{direction: 'ltr'}}
             autoPlay={false}
@@ -80,7 +84,7 @@ export const QuranPlayer = ()=> {
             onPlay={e => {
                 setShouldPlay(true)
             }}
-            autoPlayAfterSrcChange={shouldPlay}
+            autoPlayAfterSrcChange={(shouldPlay || shouldPlayerStart)}
             onEnded={goToNextAya}
         />
     </div>

@@ -14,6 +14,7 @@ export interface QuranSliceType {
     highlighterActiveId: string,
     activeSuraInfo: Sura,
     activeTafseerPage:Tafseer[];
+    shouldPlayerStart:boolean;
     modal?: {
         isSuraModalOpen?: boolean
         isAyaModalOpen?: boolean
@@ -36,6 +37,7 @@ export interface QuranSliceType {
 }
 
 const initialState: Partial<QuranSliceType> = {
+    shouldPlayerStart:false,
     filter: {
         currentAya: '1',
         currentSura: '1',
@@ -104,6 +106,10 @@ export const quranSlice = createSlice({
         },
         setSuraInfo: (state, action: PayloadAction<Sura>) => {
             state.activeSuraInfo = action.payload
+        },
+        setPlayerStats:(state, action)=>{
+            debugger
+            state.shouldPlayerStart = action.payload
         },
         setFilter: (state, action: PayloadAction<{ key: filterTypes, value: string }>) => {
             if (action.payload.key !== 'currentAya'){
@@ -174,7 +180,8 @@ export const {
     setFilter,
     setBulkFilters,
     setSuraInfo,
-    setPageTafseer
+    setPageTafseer,
+    setPlayerStats
 } = quranSlice.actions
 
 export default quranSlice.reducer

@@ -5,13 +5,20 @@ import 'react-h5-audio-player/lib/styles.css';
 import 'react-h5-audio-player/src/styles.scss'
 import {SelectModal} from "../ui-components/SelectModal/SelectModal";
 import {useDispatch, useSelector} from "react-redux";
-import {changeHighlighterActiveId, setActiveModal, setFilter, setSuraInfo} from "../../redux/quran.slice";
+import {
+    changeHighlighterActiveId,
+    setActiveModal,
+    setFilter,
+    setPlayerStats,
+    setSuraInfo
+} from "../../redux/quran.slice";
 import {getTafseerState} from "../../redux/selectors";
 import {useCallback, useEffect, useRef, useState} from "react";
 import {Col, Container, Row} from "react-bootstrap";
 import {getSuraDetails, getSuraList} from "../../services/client.service";
 import {ModalTypes, Sura} from "../../types";
 import {QuranPlayer} from "../QuranPlayer/QuranPlayer";
+import {isMobile} from "../../lib";
 
 const tafseerOptions = [
     {value: 'th3labe', label: 'الثعلبي'},
